@@ -34,6 +34,15 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # introduce pry-rails
+  gem 'pry-rails'
+  # introduce hirb
+  gem 'hirb'         # モデルの出力結果を表形式で表示するGem
+  gem 'hirb-unicode' # 日本語などマルチバイト文字の出力時の出力結果のずれに対応
+  # introduce annotate
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+  # introduce colorize_unpermitted_parameters
+  gem "colorize_unpermitted_parameters"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
@@ -42,6 +51,9 @@ group :development, :test do
 end
 
 group :development do
+  # introduce better_errors & binding_of_caller
+ gem 'better_errors' # エラー画面をわかりやすく整形してくれる
+ gem 'binding_of_caller' # better_errorsの画面上にirb/pry(PERL)を表示する
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -52,3 +64,22 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# introduce refile
+gem "refile", github: 'refile/refile', require: "refile/rails"
+gem "refile-mini_magick", github: 'refile/refile-mini_magick'
+
+# introduce devise
+gem "devise"
+
+# introduce kaminari
+gem 'kaminari'
+
+# introduce ransack
+gem 'ransack'
+
+# introduce cancancan
+gem 'cancancan'
+
+# introduce awesome_print
+gem 'awesome_print'
