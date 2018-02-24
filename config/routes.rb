@@ -1,31 +1,30 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  devise_for :users
-  get 'purchases/confimation'
+  get 'histories/index'
 
-  get 'purchases/complete'
+  get 'histories/show'
 
-  get 'purchases/purchase_info'
+  get 'histories/edit'
 
-  get 'items/index'
+devise_for :admins
+devise_for :users
 
-  get 'items/show'
+resources :users, only: [:edit, :update, :show] do
+  resource :histories, only: [:show]
+end
 
-  get 'carts/show'
+resources :admins, only: [:index] do
+  resource :histories, only: [:index, :show, :edit, :update]
+  resource :users, only: [:index, :show, :edit, :update]
+  resource :items
+end
 
-  get 'admins/index'
+resources :items
 
-  get 'admins/user'
 
-  get 'admins/histories_index'
+post 'purchases/comfirmation' => 'purchases#comfirmation'
+get 'purchases/complete' => 'purchases#complete'
+get 'purchases/thankyou' => 'purchases#thankyou'
 
-  get 'users/show'
 
-  get 'users/edit'
-
-  get 'users/history_show'
-
-  get 'users/goodbye_confirmation'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
