@@ -11,9 +11,4 @@ class PurchasesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get purchase_info" do
-    get purchases_purchase_info_url
-    assert_response :success
-  end
-
 end

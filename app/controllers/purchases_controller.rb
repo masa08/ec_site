@@ -4,7 +4,4 @@ class PurchasesController < ApplicationController
 
   def complete
   end
-
-  def purchase_info
-  end
 end
