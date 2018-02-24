@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'histories/index'
-
-  get 'histories/show'
-
-  get 'histories/edit'
-
 devise_for :admins
 devise_for :users
 
