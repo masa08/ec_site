@@ -1,0 +1,2 @@
+class Tune < ApplicationRecord
+end

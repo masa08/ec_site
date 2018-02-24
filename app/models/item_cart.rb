@@ -1,0 +1,2 @@
+class ItemCart < ApplicationRecord
+end
