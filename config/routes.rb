@@ -9,7 +9,7 @@ resources :users, only: [:edit, :update, :show] do
 end
 
 resources :admins, only: [:index] do
-  resource :histories, only: [:index, :show, :edit, :update]
+  resource :histories, only: [:show, :edit, :update]
   resource :users, only: [:index, :show, :edit, :update]
   resource :items
 end
