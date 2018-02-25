@@ -1,0 +1,141 @@
+<div class="container">
+        <div class="row">
+            <section class="admin">
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Menu
+                        </div>
+
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href=""><i class="glyphicon glyphicon-pencil"></i> 購入履歴一覧</a></li>
+                            <li><a href=""><i class="glyphicon glyphicon-download"></i> ユーザー一覧</a></li>
+                            <li><a href=""><i class="glyphicon glyphicon-leaf"></i> 在庫一覧</a></li>
+                            <li><a href=""><i class="glyphicon glyphicon-folder-open"></i> 新規在庫追加</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+<!-- main -->
+        <div class="col-md-9">
+            <div class="page-header">
+                        <h1><small>購入履歴詳細編集</small></h1>
+                    </div>
+
+                    <h1><small>購入情報</small></h1>
+
+
+            <form method="post" action"">
+
+                <div class="form-group">
+                    <label>ステータス</label>
+                    <select name="area" class="form-control col-md-4">
+                        <option value="未入金">未入金</option>
+                        <option value="未発送">未発送</option>
+                        <option value="発送済">発送済</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>購入者名</label>
+                    <input type="text" name="email" class="form-control" placeholder="購入者名を入力して下さい">
+                </div>
+                <div class="form-group">
+                    <label>受取主</label>
+                    <input type="text" name="name" class="form-control" placeholder="受取主を入力して下さい">
+                </div>
+
+                <div class="form-group">
+                    <label>郵便番号</label>
+                    <input type="text" name="email" class="form-control" placeholder="郵便番号を入力して下さい">
+                </div>
+
+                <div class="form-group">
+                    <label>配送先住所</label>
+                    <input type="text" name="email" class="form-control" placeholder="配送先住所を入力して下さい">
+                </div>
+                <div class="form-group">
+                    <label>支払い方法</label>
+                    <select name="area" class="form-control col-md-4">
+                        <option value="カード">カード</option>
+                        <option value="コンビニATM">コンビニATM</option>
+                        <option value="銀行振込">銀行振込</option>
+                        <option value="着払い">着払い</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label>配送方法</label>
+                    <select name="area" class="form-control col-md-4">
+                        <option value="通常便">通常便</option>
+                        <option value="お急ぎ便">お急ぎ便</option>
+                        <option value="日付指定">日付指定</option>
+                    </select>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">変更</button>
+
+            </form>
+
+            <div class="history-item">
+                    <h1><small>購入商品情報</small></h1>
+                    <div class="col-md-2">
+                        <a href="">
+                            <img class ="item-image" src="fickle_friends.jpg">
+                        </a>
+                    </div>
+                    <div class="col-md-7 pull-right">
+                        <table class="table table-bordered">
+                            <tr><th>No</th><td>1</td></tr>
+                            <tr><th>商品名</th><td><a href="">Brooklyn</a></td></tr>
+                            <tr><th>アーティスト</th><td>Fickle Friends</td></tr>
+                            <tr><th>形式</th><td>CD</td></tr>
+                            <tr><th>ジャンル</th><td>ロック</td></tr>
+                            <tr><th>レーベル</th><td>aaaaa</td></tr>
+                            <tr><th>価格</th><td>¥1,000</td></tr>
+                            <tr><th>数量</th><td>5
+                                <span class="pull-right">　
+                                    <input type="number" name="example" min="0" max="500" value="0">
+                                    <button type="submit" class="btn btn-primary">変更</button>
+                                    <button type="submit" class="btn btn-primary">削除</button>
+                                </span>
+                            </td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="history-item">
+                    <div class="col-md-2">
+                        <a href="">
+                            <img class ="item-image" src="seeb.jpeg">
+                        </a>
+                    </div>
+                    <div class="col-md-7 pull-right">
+                        <table class="table table-bordered">
+                            <tr><th>No</th><td>2</td></tr>
+                            <tr><th>商品名</th><td><a href="">Simple Life</a></td></tr>
+                            <tr><th>アーティスト</th><td>Seeb</td></tr>
+                            <tr><th>形式</th><td>CD</td></tr>
+                            <tr><th>ジャンル</th><td>ロック</td></tr>
+                            <tr><th>レーベル</th><td>aaaaa</td></tr>
+                            <tr><th>価格</th><td>¥1,000</td></tr>
+                            <tr><th>数量</th><td>5
+                                <span class="pull-right">　
+                                    <input type="number" name="example" min="0" max="500" value="0">
+                                    <button type="submit" class="btn btn-primary">変更</button>
+                                    <button type="submit" class="btn btn-primary">削除</button>
+                                </span>
+                            </td></tr>
+                        </table>
+                    </div>
+                </div>
+
+
+        </div>
+
+        <p class="text-muted text-center">&copy; 2017-2018</p>
+    </section>
+    </div>
+
+
+</div>

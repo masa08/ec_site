@@ -1,0 +1,101 @@
+<div class="container">
+        <div class="row">
+            <section class="admin">
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Menu
+                        </div>
+
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href=""><i class="glyphicon glyphicon-pencil"></i> 購入履歴一覧</a></li>
+                            <li><a href=""><i class="glyphicon glyphicon-download"></i> ユーザー一覧</a></li>
+                            <li><a href=""><i class="glyphicon glyphicon-leaf"></i> 在庫一覧</a></li>
+                            <li><a href=""><i class="glyphicon glyphicon-folder-open"></i> 新規在庫追加</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- main -->
+                
+
+<!-- main -->
+        <div class="col-md-9">
+            <div class="page-header">
+                        <h1><small>新規在庫追加</small></h1>
+                    </div>
+
+
+            <form method="post" action"">
+
+                <div class="form-group">
+                    <label>商品名</label>
+                    <input type="text" name="name" class="form-control" placeholder="商品名を入力して下さい"> 
+                </div>
+
+                <div class="form-group">
+                    <label>アーティスト</label>
+                    <input type="text" name="email" class="form-control" placeholder="アーティストを入力して下さい"> 
+                </div>
+                <div class="form-group">
+                    <label>商品画像</label>
+                    <input type="file">
+                </div>
+                <div class="form-group">
+                    <label>形式</label>
+                    <select name="area" class="form-control col-md-4">
+                        <option value="CD">CD</option>
+                        <option value="DVD">DVD</option>
+                        <option value="レコード">レコード</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>ジャンル</label>
+                    <select name="area" class="form-control col-md-4">
+                        <option value="ポップ">ポップ</option>
+                        <option value="ロック">ロック</option>
+                        <option value="ジャズ">ジャズ</option>
+                        <option value="ブルース">ブルース</option>
+                        <option value="R＆B">R＆B</option>
+                        <option value="クラシック">クラシック</option>
+                        <option value="演歌">演歌</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>レーベル</label>
+                    <input type="text" name="email" class="form-control" placeholder="レーベルを入力して下さい">
+                </div>
+                <div class="form-group">
+                    <label>発売日</label>
+                    <div class="input-group date">
+                      <input type="text" class="form-control" value="2018/02/28">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>価格</label>
+                    <input type="text" name="email" class="form-control" placeholder="価格を入力して下さい">
+                </div>
+
+                <div class="form-group">
+                    <label>在庫数</label>
+                    <input type="number" name="example" min="0" max="500" value="0">
+                </div>
+
+                <!-- submit -->
+                <button type="submit" class="btn btn-primary">追加</button>
+
+            </form>
+
+        </div>
+
+
+
+
+
+        <p class="text-muted text-center">&copy; 2017-2018</p>
+
+    </section>
+    </div>
+</div>
