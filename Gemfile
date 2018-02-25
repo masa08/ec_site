@@ -83,3 +83,6 @@ gem 'cancancan'
 
 # introduce awesome_print
 gem 'awesome_print'
+
+# introduce bootstrap
+gem 'bootstrap-sass'
