@@ -27,7 +27,7 @@
                 <div class="container-right__search"></div>
                 <h1 class="container-right__title text-center">商品基本情報</h1>
                 <div class="container-right_contents text-center col-lg-4 col-mg-4">
-                    <img src="img/ruby.png" alt="" class="container-right__img-item">
+                    <%= attachment_image_tag @item, :jacket_image, :fill, 200, 200 %>
                     <h3 class="container-right_contents__title">曲名</h3>
                     <table class="table table-striped">
                         <thead>
@@ -65,27 +65,27 @@
                             <tbody>
                                 <tr>
                                     <th>名前</th>
-                                    <td>Ruby</td>
+                                    <td><%= @item.item_name %></td>
                                 </tr>
                                 <tr>
                                     <th>アーティスト名</th>
-                                    <td>Ruby on rails</td>
+                                    <td><%= @item.artist_name %></td>
                                 </tr>
                                 <tr>
                                     <th>値段</th>
-                                    <td>9999円</td>
+                                    <td><%= @item.price %></td>
                                 </tr>
                                 <tr>
                                     <th>個数</th>
-                                    <td>3個</td>
+                                    <td><%= @item.stock %></td>
                                 </tr>
                                 <tr>
                                     <th>制作会社</th>
-                                    <td>プログラミング協会</td>
+                                    <td><%= @item.label %></td>
                                 </tr>
                                 <tr>
                                     <th>リリース日</th>
-                                    <td>2018/02/18</td>
+                                    <td><%= @item.release_date_id %></td>
                                 </tr>
                             </tbody>
                         </table>
