@@ -27,37 +27,17 @@
         </div>
         <div class="col-lg-9 col-md-9">
             <div class="container-right">
+                <% @items.each do |item| %>
                 <h1 class="container-right__title text-center">商品一覧</h1>
                 <div class="container-right__contents text-center col-lg-3 col-md-3">
                     <img src="img/ruby.png" alt="" class="container-right__contents__img">
-                    <h3 class="container-right__contents__title">Ruby</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, facere. Provident ab officiis odit quidem cupiditate ducimus, ex</p>
+                    <h3 class="container-right__contents__title"><%= item.item_name %></h3>
+                    <p>値段:<%= item.price %>円</p>
+                    <p>残り:<%= item.stock %></p>
+                    <p>アーティスト名:<%= item.artist_name %></p>
+                    <p><%= item.label %></p>
                 </div>
-                <div class="container-right__contents text-center col-lg-3 col-md-3">
-                    <img src="img/ruby.png" alt="" class="container-right__contents__img">
-                    <h3 class="container-right__contents__title">Ruby</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, facere. Provident ab officiis odit quidem cupiditate ducimus, ex</p>
-                </div>
-                <div class="container-right__contents text-center col-lg-3 col-md-3">
-                    <img src="img/ruby.png" alt="" class="container-right__contents__img">
-                    <h3 class="container-right__contents__title">Ruby</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, facere. Provident ab officiis odit quidem cupiditate ducimus, ex</p>
-                </div>
-                <div class="container-right__contents text-center col-lg-3 col-md-3">
-                    <img src="img/ruby.png" alt="" class="container-right__contents__img">
-                    <h3 class="container-right__contents__title">Ruby</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, facere. Provident ab officiis odit quidem cupiditate ducimus, ex</p>
-                </div>
-                <div class="container-right__contents text-center col-lg-3 col-md-3">
-                    <img src="img/ruby.png" alt="" class="container-right__contents__img">
-                    <h3 class="container-right__contents__title">Ruby</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, facere. Provident ab officiis odit quidem cupiditate ducimus, ex</p>
-                </div>
-                <div class="container-right__contents text-center col-lg-3 col-md-3">
-                    <img src="img/ruby.png" alt="" class="container-right__contents__img">
-                    <h3 class="container-right__contents__title">Ruby</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, facere. Provident ab officiis odit quidem cupiditate ducimus, ex</p>
-                </div>
+                <% end %>
             </div>
         </div>
     </div>
