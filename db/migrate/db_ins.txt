@@ -1,0 +1,24 @@
+insert into genres values(1, "ロック", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into genres values(2, "J-POP", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into genres values(3, "K-POP", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into genres values(4, "洋楽", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into genres values(5, "R＆B", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into genres values(6, "バラード", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into genres values(7, "HIP-POP", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into genres values(8, "EDM", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into genres values(9, "演歌", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into genres values(10, "バイキングメタル", "00-00-00 00:00:00", "00-00-00 00:00:00");
+
+
+insert into deliveries values(1, "自宅受取", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into deliveries values(2, "店舗受取", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into deliveries values(3, "コンビニ受取", "00-00-00 00:00:00", "00-00-00 00:00:00");
+
+insert into types values(1, "CD", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into types values(2, "DVD", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into types values(3, "レコード", "00-00-00 00:00:00", "00-00-00 00:00:00");
+
+insert into payments values(1, "クレジットカード", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into payments values(2, "代金引換", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into payments values(3, "コンビニ支払い", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into payments values(4, "銀行振込_", "00-00-00 00:00:00", "00-00-00 00:00:00");
