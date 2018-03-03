@@ -1,6 +1,18 @@
 <div class="mainVisual">
-    <img src="img/sukusho.png" alt="" class="mainVisual__img">
+    <!-- <img src="img/sukusho.png" alt="" class="mainVisual__img"> -->
 </div>
+
+<%= form_for(@item) do |f| %>
+    <%= f.attachment_field :jacket_image %>
+    名前<%= f.text_field :item_name %>
+    数<%= f.text_field :stock %>
+    アーティスト名<%= f.text_field :artist_name %>
+    値段<%= f.text_field :price %>
+    ラベル<%= f.text_field :label %>
+    アイテムステータス<%= f.text_field :item_status_id %>
+    リリース日<%= f.text_field :release_date_id %>
+    <%= f.submit %>
+<% end %>
 <div class="container">
     <div class="row">
         <div class="col-lg-3 col-md-3">
@@ -27,10 +39,11 @@
         </div>
         <div class="col-lg-9 col-md-9">
             <div class="container-right">
+              <h1 class="container-right__title text-center">商品一覧</h1>
                 <% @items.each do |item| %>
-                <h1 class="container-right__title text-center">商品一覧</h1>
+
                 <div class="container-right__contents text-center col-lg-3 col-md-3">
-                    <img src="img/ruby.png" alt="" class="container-right__contents__img">
+                  <%= attachment_image_tag item, :jacket_image, :fill, 150, 150 %>
                     <h3 class="container-right__contents__title"><%= item.item_name %></h3>
                     <p>値段:<%= item.price %>円</p>
                     <p>残り:<%= item.stock %></p>
