@@ -31,6 +31,14 @@ end
 
 resources :items
 
+# cart関連
+resources :carts, only: [:show]
+
+  post '/add_item' => 'carts#add_item'
+  post '/update_item' => 'carts#update_item'
+  delete '/delete_item' => 'carts#delete_item'
+
+
 post 'purchases/comfirmation' => 'purchases#comfirmation'
 get 'purchases/complete' => 'purchases#complete'
 get 'purchases/thankyou' => 'purchases#thankyou'
