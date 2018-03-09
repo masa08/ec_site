@@ -21,6 +21,11 @@
                     <li class="nav-item">
                         <a class="nav-link header__nav--btn" href="#">マイページ</a>
                     </li>
+
+                    <li>
+                      <p class="nav-link header__nav--btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+                    </li>
+
                     <li class="nav-item">
                         <form class="form-inline my-2 my-lg-0 header__nav--search">
                             <input class="form-control mr-sm-2" type="text" placeholder="Search">
