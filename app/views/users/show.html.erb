@@ -1,2 +1,90 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+ <div class="container">
+
+        <%= render 'users/side_bar' %>
+
+            <div class="col-lg-9 col-md-9">
+                <div class="container-right">
+                  <div class="user_info">
+                    <h1 class="container-right__title text-center">個人情報</h1>
+                    <div class="text-center">
+                        <div class="container-right__user-info">
+                            <table class="table user_info">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>名前(漢字)</th>
+                                        <td><%= @user.user_name_kanji %></td>
+                                    </tr>
+                                    <tr>
+                                        <th>名前(カタカナ)</th>
+                                        <td><%= @user.user_name_kana %></td>
+                                    </tr>
+                                    <tr>
+                                        <th>メールアドレス</th>
+                                        <td><%= @user.email %></td>
+                                    </tr>
+                                    <tr>
+                                        <th>郵便番号</th>
+                                        <td><%= @user.postal_code %></td>
+                                    </tr>
+                                    <tr>
+                                        <th>住所</th>
+                                        <td><%= @user.address %></td>
+                                    </tr>
+                                    <tr>
+                                        <th>電話番号</th>
+                                        <td><%= @user.phone_number %></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="container-right__user-info__btn">
+                              <button class="btn my-2 my-sm-0 btn__color" type="submit">カートの中を見る</button>
+                              <%= link_to "個人情報を編集する", edit_user_path(current_user), class: "btn my-2 my-sm-0 btn__color" %>
+                            </div>
+                          </div>
+
+                        </div>
+                    </div>
+                    <div class="container-right__user-info__history">
+                      <h2 class="container-right__user-info__history__title text-center">購入履歴</h2>
+                      <table class="table">
+                          <thead>
+                              <tr>
+                                  <th>id</th>
+                                  <th>購入日時</th>
+                                  <th>ステータス</th>
+                                  <th></th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <th>1</th>
+                                  <td>2017/09/22</td>
+                                  <td>配送済み</td>
+                                  <td><button class="btn my-2 my-sm-0 btn__color" type="submit">詳細</button></td>
+                              </tr>
+                              <tr>
+                                  <th>2</th>
+                                  <td>2017/11/22</td>
+                                  <td>配送済み</td>
+                                  <td><button class="btn my-2 my-sm-0 btn__color" type="submit">詳細</button></td>
+                              </tr>
+                              <tr>
+                                  <th>3</th>
+                                  <td>2017/12/22</td>
+                                  <td>配送済み</td>
+                                  <td><button class="btn my-2 my-sm-0 btn__color" type="submit">詳細</button></td>
+                              </tr>
+                          </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
