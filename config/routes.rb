@@ -19,7 +19,14 @@ end
 resources :admins, only: [:index] do
   resource :histories, only: [:show, :edit, :update]
   resource :users, only: [:index, :show, :edit, :update]
-  resource :items
+  resource :items do
+    collection do
+      get 'admin_new'
+      get 'admin_index'
+      get 'admin_show'
+      get 'admin_edit'
+    end
+  end
 end
 
 resources :items
