@@ -3,15 +3,15 @@
 </div>
 
 <%= form_for(@item) do |f| %>
-    <%= f.attachment_field :jacket_image %>
-    名前<%= f.text_field :item_name %>
-    数<%= f.text_field :stock %>
-    アーティスト名<%= f.text_field :artist_name %>
-    値段<%= f.text_field :price %>
-    ラベル<%= f.text_field :label %>
-    アイテムステータス<%= f.text_field :item_status_id %>
-    リリース日<%= f.text_field :release_date_id %>
-    <%= f.submit %>
+<%= f.attachment_field :jacket_image %>
+名前<%= f.text_field :item_name %>
+数<%= f.text_field :stock %>
+アーティスト名<%= f.text_field :artist_name %>
+値段<%= f.text_field :price %>
+ラベル<%= f.text_field :label %>
+アイテムステータス<%= f.text_field :item_status_id %>
+リリース日<%= f.text_field :release_date_id %>
+<%= f.submit %>
 <% end %>
 <div class="container">
     <div class="row">
@@ -39,18 +39,31 @@
         </div>
         <div class="col-lg-9 col-md-9">
             <div class="container-right">
-              <h1 class="container-right__title text-center">商品一覧</h1>
-                <% @items.each do |item| %>
-
-                <div class="container-right__contents text-center col-lg-3 col-md-3">
-                  <%= attachment_image_tag item, :jacket_image, :fill, 150, 150 %>
-                    <h3 class="container-right__contents__title"><%= item.item_name %></h3>
-                    <p>値段:<%= item.price %>円</p>
-                    <p>残り:<%= item.stock %></p>
-                    <p>アーティスト名:<%= item.artist_name %></p>
-                    <p><%= item.label %></p>
-                </div>
+                <h1 class="container-right__title text-center">商品一覧</h1>
+                <% if @search %>
+                  <% @results.each do |result| %>
+                  <div class="container-right__contents text-center col-lg-3 col-md-3">
+                      <%= attachment_image_tag result, :jacket_image, :fill, 150, 150 %>
+                      <h3 class="container-right__contents__title"><%= result.item_name %></h3>
+                      <p>値段:<%= result.price %>円</p>
+                      <p>残り:<%= result.stock %></p>
+                      <p>アーティスト名:<%= result.artist_name %></p>
+                      <p><%= result.label %></p>
+                  </div>
+                  <% end %>
+                <% else %>
+                  <% @items.each do |item| %>
+                  <div class="container-right__contents text-center col-lg-3 col-md-3">
+                      <%= attachment_image_tag item, :jacket_image, :fill, 150, 150 %>
+                      <h3 class="container-right__contents__title"><%= item.item_name %></h3>
+                      <p>値段:<%= item.price %>円</p>
+                      <p>残り:<%= item.stock %></p>
+                      <p>アーティスト名:<%= item.artist_name %></p>
+                      <p><%= item.label %></p>
+                  </div>
                 <% end %>
+
+              <% end %>
             </div>
         </div>
     </div>

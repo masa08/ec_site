@@ -21,11 +21,6 @@
                     <li class="nav-item">
                         <a class="nav-link header__nav--btn" href="#">マイページ</a>
                     </li>
-
-                    <li>
-                      <p class="nav-link header__nav--btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
-                    </li>
-
                     <li class="nav-item">
                         <form class="form-inline my-2 my-lg-0 header__nav--search">
                             <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -45,10 +40,16 @@
                         <a class="nav-link header__nav--btn" href="#">ログイン</a>
                     </li>
                     <li class="nav-item">
-                        <form class="form-inline my-2 my-lg-0 header__nav--search">
+                      <%= search_form_for @search do |f| %>
+
+                        <%= f.label :item_name_cont, "商品名" %>
+                        <%= f.search_field :item_name_cont %>
+                        <%= f.submit "検索", class: 'btn my-2 my-sm-0 btn__color' %>
+                        <% end %>
+                        <!-- <form class="form-inline my-2 my-lg-0 header__nav--search">
                             <input class="form-control mr-sm-2" type="text" placeholder="Search">
                             <button class="btn my-2 my-sm-0 btn__color" type="submit">Search</button>
-                        </form>
+                        </form> -->
                     </li>
                 </ul>
                 <% end %>
