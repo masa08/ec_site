@@ -4,11 +4,24 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def admin_index
+    @items = Item.all
+    @item = Item.new
+  end
+
   def show
     @item = Item.find(params[:id])
   end
 
+  def admin_show
+    @item = Item.find(params[:id])
+  end
+
   def new
+    @item = Item.new
+  end
+
+  def admin_new
     @item = Item.new
   end
 
@@ -17,7 +30,9 @@ class ItemsController < ApplicationController
     item.save
     redirect_to item_path(item.id)
   end
-
+  def admin_edit
+    
+  end
   def update
 
   end
