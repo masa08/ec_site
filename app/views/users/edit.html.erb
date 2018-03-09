@@ -1,2 +1,79 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+   
+
+
+    <div class="container">
+        <div class="row">
+            <form class="form-mypage-edit">
+              <%= form_for(@user) do |f| %>
+
+
+            
+
+              <div class="text-center">
+                  <h1 class="h3 font-weight-normal">個人情報編集</h1>
+              </div>
+              <div class="field row">
+                <%= f.label :Title %>
+                <%= f.text_field :title %>
+            </div>
+
+            <div class="field row">
+                <%= f.label :Opinion %>
+                <%= f.text_area :body %>
+            </div>
+
+            <div class="actions row">
+                <%= f.submit class: 'btn btn-primary glyphicon glyphicon-book'%>
+            </div>
+            <% end %>
+
+                <div class="form-label-group">
+                    <label for="inputkanji">名前(漢字)</label>
+                    <%= f.label :名前(漢字) %>
+                    <%= f.text_field :user_name_kanji %>
+                    <br />
+
+                   
+                    <input type="kanji" id="inputKanji" class="form-control" placeholder="名前(漢字)" required autofocus>
+                </div>
+
+                <div class="form-label-group">
+                    <label for="inputKana">名前(カタカナ)</label>
+                    <input type="Kana" id="inputKana" class="form-control" placeholder="名前(カタカナ)" required>
+                </div>
+
+                <div class="form-label-group">
+                    <label for="inputAddress">住所</label>
+                    <input type="Address" id="inputAddress" class="form-control" placeholder="住所" required>
+                </div>
+
+                <div class="form-label-group">
+                    <label for="inputPostalcode">郵便番号</label>
+                    <input type="Postalcode" id="inputPostalcode" class="form-control" placeholder="郵便番号" required>
+                </div>
+
+                <div class="form-label-group">
+                    <label for="inputinputPhonenumber">電話番号</label>
+                    <input type="inputPhonenumber" id="inputPhonenumber" class="form-control" placeholder="電話番号" required>
+                </div>
+
+                <div class="form-label-group">
+                    <label for="inputEmail">メールアドレス</label>
+                    <input type="Email" id="inputEmail" class="form-control" placeholder="メールアドレス" required>
+                </div>
+
+                <div class="form-label-group">
+                    <label for="inputPassword">パスワード</label>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="パスワード" required>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+     <input type="checkbox" value="remember-me"> Remember me
+   </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">更新</button>
+                <p class="text-muted text-center">&copy; 2017-2018</p>
+            </form>
+        </div>
+    </div>
