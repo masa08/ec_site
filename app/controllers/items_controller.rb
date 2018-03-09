@@ -2,6 +2,9 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
     @item = Item.new
+    # ransack
+    @search = Item.ransack(params[:q])  #追加
+    @results = @search.result
   end
 
   def admin_index
@@ -31,7 +34,7 @@ class ItemsController < ApplicationController
     redirect_to item_path(item.id)
   end
   def admin_edit
-    
+
   end
   def update
 
