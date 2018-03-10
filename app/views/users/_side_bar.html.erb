@@ -1,22 +1,31 @@
-<div class="col-lg-3 col-md-3">
-    <div class="container-left">
-        <h3 class="container-left__title">カテゴリー</h3>
-        <ul>
-            <li>w</li>
-            <li>w</li>
-            <li>w</li>
+
+<div class="col-md-3 side_bar">
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    ジャンル
+                </div>
+
+                <ul class="nav nav-pills nav-stacked">
+
+            <li><%= link_to "ロック", items_path %></li>
+            <li><%= link_to "J-POP", items_path %></li>
+            <li><%= link_to "K-POP", items_path %></li>
+            <li><%= link_to "洋楽", items_path %></li>
+            <li><%= link_to "R&B", items_path %></li>
+            <li><%= link_to "バラード", items_path %></li>
+            <li><%= link_to "HIP-POP", items_path %></li>
+            <li><%= link_to "EDM", items_path %></li>
+            <li><%= link_to "演歌", items_path %></li>
+            <li><%= link_to "バイキングメタル", items_path %></li>
         </ul>
-        <h3 class="container-left__title">ジャンル</h3>
-        <ul>
-            <li>w</li>
-            <li>w</li>
-            <li>w</li>
+        <br>
+        <h3 class="panel-heading">タイプ</h3>
+        <br>
+                <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to "CD", items_path %></li>
+            <li><%= link_to "DVD", items_path %></li>
+            <li><%= link_to "レコード", items_path %></li>
+
         </ul>
-        <h3 class="container-left__title">タイプ</h3>
-        <ul>
-            <li>w</li>
-            <li>w</li>
-            <li>w</li>
-        </ul>
-    </div>
-</div>
+            </div>
+        </div>

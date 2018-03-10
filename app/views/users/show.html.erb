@@ -43,7 +43,7 @@
                                 </tbody>
                             </table>
                             <div class="container-right__user-info__btn">
-                              <button class="btn my-2 my-sm-0 btn__color" type="submit">カートの中を見る</button>
+                              <%= link_to "カートの中を見る", cart_path(current_user), class: "btn my-2 my-sm-0 btn__color" %>
                               <%= link_to "個人情報を編集する", edit_user_path(current_user), class: "btn my-2 my-sm-0 btn__color" %>
                             </div>
                           </div>
@@ -66,19 +66,19 @@
                                   <th>1</th>
                                   <td>2017/09/22</td>
                                   <td>配送済み</td>
-                                  <td><button class="btn my-2 my-sm-0 btn__color" type="submit">詳細</button></td>
+                                  <td><%= link_to "詳細",  user_histories_path(@user), class: "btn my-2 my-sm-0 btn__color" %></td>
                               </tr>
                               <tr>
                                   <th>2</th>
                                   <td>2017/11/22</td>
                                   <td>配送済み</td>
-                                  <td><button class="btn my-2 my-sm-0 btn__color" type="submit">詳細</button></td>
+                                  <td><%= link_to "詳細",  user_histories_path(@user), class: "btn my-2 my-sm-0 btn__color" %></td>
                               </tr>
                               <tr>
                                   <th>3</th>
                                   <td>2017/12/22</td>
                                   <td>配送済み</td>
-                                  <td><button class="btn my-2 my-sm-0 btn__color" type="submit">詳細</button></td>
+                                  <td><%= link_to "詳細",  user_histories_path(@user), class: "btn my-2 my-sm-0 btn__color" %></td>
                               </tr>
                           </tbody>
                         </table>
