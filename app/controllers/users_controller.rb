@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def update
   	user = current_user
   	user.update(user_params)
+    binding.pry
   	redirect_to user_path(user)
   end
 

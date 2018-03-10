@@ -4,7 +4,7 @@ insert into genres values(3, "K-POP", "00-00-00 00:00:00", "00-00-00 00:00:00");
 insert into genres values(4, "洋楽", "00-00-00 00:00:00", "00-00-00 00:00:00");
 insert into genres values(5, "R＆B", "00-00-00 00:00:00", "00-00-00 00:00:00");
 insert into genres values(6, "バラード", "00-00-00 00:00:00", "00-00-00 00:00:00");
-insert into genres values(7, "HIP-POP", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into genres values(7, "HIP-HOP", "00-00-00 00:00:00", "00-00-00 00:00:00");
 insert into genres values(8, "EDM", "00-00-00 00:00:00", "00-00-00 00:00:00");
 insert into genres values(9, "演歌", "00-00-00 00:00:00", "00-00-00 00:00:00");
 insert into genres values(10, "バイキングメタル", "00-00-00 00:00:00", "00-00-00 00:00:00");
