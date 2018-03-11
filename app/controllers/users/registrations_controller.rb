@@ -7,7 +7,7 @@ before_action :ransack
 
 
   # GET /resource/sign_up
-  #def new
+  # def new
   #   super
   # end
 
