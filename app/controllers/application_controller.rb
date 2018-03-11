@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-
+  before_action :ransack
   protect_from_forgery with: :exception
 
   helper_method :current_cart
@@ -15,8 +15,12 @@ class ApplicationController < ActionController::Base
     #   session[:cart_id] = @cart.
     # end
   end
-
-  protected
+  private
+  def ransack
+    # ransack
+    @search = Item.ransack(params[:q])  #追加
+    @results = @search.result
+  end
 
   def configure_permitted_parameters
     #strong parametersを設定し、usernameを許可
