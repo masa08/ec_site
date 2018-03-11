@@ -1,16 +1,24 @@
-<h2>Forgot your password?</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+  <div class="config">
+        <p class="pass_change">パスワード変更</p>
+        <div class="line"></div>
+    <div class="form">
+    	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, class: "form-inline text-center") do |f| %>
+ 		 <%= devise_error_messages! %>
+          <div class="form-group">
+   			<%= f.label :user_name_kanji,"名前(漢字)" %><br />
+       	 	<%= f.text_field :user_name_kanji, autofocus: true, autocomplete: "user_name_kanji", class: "form-control",placeholder: "名前(漢字)" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :email, "メールアドレス" %><br />
+        	<%= f.text_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス" %>
+          </div>
+          <div class="actions">
+   			 <%= f.submit "Send me reset password instructions",class: "btn btn-default"  %>
+ 		  </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+          <% end %>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+		<%= render "users/shared/links" %>
+    </div>
+</div>
