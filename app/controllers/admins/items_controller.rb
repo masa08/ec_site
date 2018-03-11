@@ -1,4 +1,7 @@
 class Admins::ItemsController < ApplicationController
+	before_action :ransack, only: [:index, :show, :new, :edit]
+
+
 	def index
     @items = Item.all
     @item = Item.new
@@ -31,4 +34,10 @@ class Admins::ItemsController < ApplicationController
     params.require(:item).permit(:item_name, :stock, :artist_name,
       :jacket_image, :price, :label, :item_status_id, :release_date_id)
   end
+	def ransack
+    # ransack
+    @search = Item.ransack(params[:q])  #追加
+    @results = @search.result
+  end
+
 end
