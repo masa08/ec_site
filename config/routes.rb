@@ -20,17 +20,14 @@ end
 resources :admins, only: [:index] do
   resource :histories, only: [:show, :edit, :update]
   resource :users, only: [:index, :show, :edit, :update]
-  resource :items do
-    collection do
-      get 'admin_new'
-      get 'admin_index'
-      get 'admin_show'
-      get 'admin_edit'
-    end
-  end
+  
 end
 
 resources :items
+
+namespace :admins do
+  resources :items
+end
 
 # cart関連
 resources :carts, only: [:show]
