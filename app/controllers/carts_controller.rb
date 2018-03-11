@@ -4,6 +4,10 @@ class CartsController < ApplicationController
   end
   # 商品一覧画面から、「商品購入」を押した時のアクション
   def add_item
+    @item = params[:item_id]
+
+    binding.pry
+
 
   end
 
