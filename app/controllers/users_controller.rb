@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  before_action :ransack, only: [:show, :edit, :history_show, :goodbye_confirmation]
-
   def show
   	@user = current_user
   end
@@ -28,9 +26,4 @@ class UsersController < ApplicationController
        params.require(:user).permit(:user_name_kanji, :user_name_kana, :postal_code, :address, :phone_number, :email)
     end
 
-    def ransack
-      # ransack
-      @search = Item.ransack(params[:q])  #追加
-      @results = @search.result
-    end
 end

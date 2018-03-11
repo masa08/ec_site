@@ -62,7 +62,6 @@
                       <p>アーティスト名:<%= item.artist_name %></p>
                       <p><%= item.label %></p>
                       <%= link_to 'カートに追加', controller: "carts", action: "add_item", item_id: item.id, method: :post %>
-                      <%= link_to 'test', controller: "tests", action: "index", company_id: 3 %>
 
                   </div>
                 <% end %>
