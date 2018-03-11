@@ -35,12 +35,12 @@
                 <div class="col-md-4">
                     <div class="thumbnail" style="text-align:center;padding-top:10px;">
                         <a href="">
-                            <img src="fickle_friends.jpg">
+                            <%= attachment_image_tag item, :jacket_image, :fill, 150, 150 %>
                         </a>
                         <div class="caption">
                             <p><b><%=item.item_name%></b></p>
                             <p>アーティスト名：<%=item.artist_name%></p>
-                            <p>形式：CD</p>
+                            <p>形式：<%=%></p>
                             <p>在庫数：<%=item.stock%></p>
                             <p>金額：¥1,000</p>
                             <p style="margin-bottom:0px">

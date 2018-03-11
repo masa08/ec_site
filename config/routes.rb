@@ -17,16 +17,13 @@ resources :users, only: [:edit, :update, :show] do
   resource :histories, only: [:show]
 end
 
-resources :admins, only: [:index] do
-  resource :histories, only: [:show, :edit, :update]
-  resource :users, only: [:index, :show, :edit, :update]
-  
-end
 
 resources :items
 
 namespace :admins do
   resources :items
+  resources :histories, only: [:show, :edit, :update, :index]
+  resources :users, only: [:index, :show, :edit, :update]
 end
 
 # cart関連

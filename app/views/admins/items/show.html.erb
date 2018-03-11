@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-md-4">
                     <a href="">
-                        <img class ="item-image" src="fickle_friends.jpg">
+                        <%= attachment_image_tag @item, :jacket_image, :fill, 300, 300 %>
                     </a>
                 </div>
 
@@ -33,14 +33,14 @@
 
 
                     <table class="table table-hover">
-                        　<tr><th>商品名</th><td>Brooklyn</td></tr>
-                        <tr><th>アーティスト</th><td>Fickle Friends</td></tr>
+                        　<tr><th>商品名</th><td><%=@item.item_name%></td></tr>
+                        <tr><th>アーティスト</th><td>@item.artist_name</td></tr>
                         <tr><th>形式</th><td>CD</td></tr>
                             　<tr><th>ジャンル</th><td>ロック</td></tr>
-                              <tr><th>発売日</th><td>2017-08-10</td></tr>
-                                  <tr><th>レーベル</th><td>aaaaa</td></tr>
-                                  <tr><th>価格</th><td>¥1,000</td></tr>
-                                  <tr><th>在庫数</th><td>100</td></tr>
+                              <tr><th>発売日</th><td>@item.release_date_id</td></tr>
+                                  <tr><th>レーベル</th><td><%=@item.label%></td></tr>
+                                  <tr><th>価格</th><td>¥<%=@item.price%></td></tr>
+                                  <tr><th>在庫数</th><td><%=@item.stock%></td></tr>
                                   <tr><th>在庫追加</th><td><input type="number" name="example" min="0" max="500" value="0"><a href="" class="btn btn-primary btn-xs">更新</a></td></tr>
                               </table>
 
