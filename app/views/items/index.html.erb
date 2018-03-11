@@ -49,7 +49,7 @@
                       <p>残り:<%= result.stock %></p>
                       <p>アーティスト名:<%= result.artist_name %></p>
                       <p><%= result.label %></p>
-                      <%= link_to 'カートに追加', controller: "carts", action: "add_item", item_id: result.id, method: :post %>
+                      <%= link_to 'カートに追加', add_item_path(item_id: result.id), method: :post %>
                   </div>
                   <% end %>
                 <% else %>
@@ -61,8 +61,8 @@
                       <p>残り:<%= item.stock %></p>
                       <p>アーティスト名:<%= item.artist_name %></p>
                       <p><%= item.label %></p>
-                      <%= link_to 'カートに追加', controller: "carts", action: "add_item", item_id: item.id, method: :post %>
-
+                      <%= item.id  %>
+                      <%= link_to 'カートに追加', add_item_path(item_id: item.id), method: :post %>
                   </div>
                 <% end %>
 
