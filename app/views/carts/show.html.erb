@@ -1,2 +1,12 @@
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+<h1>カート</h1>
+
+<% @item_carts.each do |item_cart| %>
+<div class="container-right__contents text-center col-lg-3 col-md-3">
+<%= item_cart.item.item_name %>
+<h3 class="container-right__contents__title"><%= item_cart.item.item_name %></h3>
+<p>値段:<%= item_cart.item.price %>円</p>
+<p>残り:<%= item_cart.item.stock %></p>
+<p>アーティスト名:<%= item_cart.item.artist_name %></p>
+<p><%= item_cart.item.label %></p>
+</div>
+<% end %>
