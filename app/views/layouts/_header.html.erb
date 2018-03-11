@@ -14,7 +14,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <%= link_to "ログアウト", destroy_user_session_path(user), class: "nav-link header__nav--btn" %>
+                        <%= link_to "ログアウト", destroy_user_session_path(user), method: :delete, class: "nav-link header__nav--btn" %>
                     </li>
 
 
