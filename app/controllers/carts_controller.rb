@@ -14,11 +14,11 @@ class CartsController < ApplicationController
       @cart.user_id = current_user.id
       @cart.save
     end
-    # take cart_id
+    # get cart_id
     @cart_id = @cart.id
-    # get all ids
+    # get all ids to save item_cart
 
-    # Create ItemCart
+    # Create ItemCart or Update item_cart
     if ItemCart.where(cart_id: @cart_id, item_id: @item).presence
       @item_cart = ItemCart.find_by(cart_id: @cart_id, item_id: @item)
       @item_cart.item_count += 1
@@ -35,6 +35,14 @@ class CartsController < ApplicationController
 
   end
   def delete_item
-
+    # item_cart update
+    @item_cart = ItemCart.find(params[:id])
+    @item_cart.item_count -= 1
+    @item_cart.update(item_count: @item_cart.item_count)
+    # delete item_cart
+    if @item_cart.item_count == 0
+      @item_cart.destroy
+    end
+    redirect_to cart_path(@item_cart.cart_id)
   end
 end
