@@ -33,10 +33,13 @@ resources :carts, only: [:show]
   post '/update_item' => 'carts#update_item'
   post '/delete_item' => 'carts#delete_item'
 
-
-post 'purchases/comfirmation' => 'purchases#comfirmation'
-get 'purchases/complete' => 'purchases#complete'
+# purchase関連
+get 'purchases/comfirmation' => 'purchases#comfirmation'
+get 'purchases/complete' => 'purchases#complete_view'
+post 'purchases/complete' => 'purchases#complete'
 get 'purchases/thankyou' => 'purchases#thankyou'
+
+
 
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

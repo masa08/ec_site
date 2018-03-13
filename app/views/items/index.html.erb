@@ -42,6 +42,7 @@
                 <h1 class="container-right__title text-center">商品一覧</h1>
                 <% if @search %>
                   <% @results.each do |result| %>
+                  <%= link_to item_path(result.id) do %>
                   <div class="container-right__contents text-center col-lg-3 col-md-3">
                       <%= attachment_image_tag result, :jacket_image, :fill, 150, 150 %>
                       <h3 class="container-right__contents__title"><%= result.item_name %></h3>
@@ -52,8 +53,10 @@
                       <%= link_to 'カートに追加', add_item_path(item_id: result.id), method: :post %>
                   </div>
                   <% end %>
+                  <% end %>
                 <% else %>
                   <% @items.each do |item| %>
+                  <%= link_to item_path(item.id) do %>
                   <div class="container-right__contents text-center col-lg-3 col-md-3">
                       <%= attachment_image_tag item, :jacket_image, :fill, 150, 150 %>
                       <h3 class="container-right__contents__title"><%= item.item_name %></h3>
@@ -64,6 +67,7 @@
                       <%= item.id  %>
                       <%= link_to 'カートに追加', add_item_path(item_id: item.id), method: :post %>
                   </div>
+                  <% end %>
                 <% end %>
 
               <% end %>
