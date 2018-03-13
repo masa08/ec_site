@@ -2,12 +2,14 @@
 
 <% @item_carts.each do |item_cart| %>
 <div class="container-right__contents text-center col-lg-3 col-md-3">
-<%= item_cart.item.item_name %>
+ <%= attachment_image_tag item_cart.item, :jacket_image, :fill, 150, 150 %>
+<p><%= item_cart.item.item_name %></p>
 <h3 class="container-right__contents__title"><%= item_cart.item.item_name %></h3>
 <p>値段:<%= item_cart.item.price %>円</p>
 <p>残り:<%= item_cart.item.stock %></p>
 <p>アーティスト名:<%= item_cart.item.artist_name %></p>
 <p><%= item_cart.item.label %></p>
 <p><%= item_cart.item_count %></p>
+<%= link_to 'カートから1つ削除', delete_item_path(id: item_cart.id), method: :post %>
 </div>
 <% end %>
