@@ -13,3 +13,9 @@
 <%= link_to 'カートから1つ削除', delete_item_path(id: item_cart.id), method: :post %>
 </div>
 <% end %>
+
+
+<%= link_to '購入する', purchases_complete_path(cart_id: @cart.id), method: :post %>
+
+<!-- アクションでそれを展開すること,
+展開したのちにitem.item_countからitemcart.item_countを引くこと -->

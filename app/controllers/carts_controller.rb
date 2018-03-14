@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   def show
     @item_carts = ItemCart.all
+    @cart = Cart.find(params[:id])
   end
 
   def add_item
@@ -17,7 +18,6 @@ class CartsController < ApplicationController
     # get cart_id
     @cart_id = @cart.id
     # get all ids to save item_cart
-
     # Create ItemCart or Update item_cart
     if ItemCart.where(cart_id: @cart_id, item_id: @item).presence
       @item_cart = ItemCart.find_by(cart_id: @cart_id, item_id: @item)
@@ -32,8 +32,8 @@ class CartsController < ApplicationController
   end
 
   def update_item
-
   end
+
   def delete_item
     # item_cart update
     @item_cart = ItemCart.find(params[:id])
