@@ -35,7 +35,7 @@ resources :carts, only: [:show]
 
 # purchase関連
 get 'purchases/comfirmation' => 'purchases#comfirmation'
-get 'purchases/complete' => 'purchases#complete_view'
+get 'purchases/complete' => 'purchases#complete_view', as: "complete_view"
 post 'purchases/complete' => 'purchases#complete'
 get 'purchases/thankyou' => 'purchases#thankyou'
 

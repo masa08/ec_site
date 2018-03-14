@@ -13,9 +13,9 @@ class PurchasesController < ApplicationController
       @item_count = @item.stock
       @item_count -= @count
       @item.update(stock: @item_count)
+      cart_item.destroy
     end
-
-    render :complete_view
+    redirect_to complete_view_path
   end
 
   def complete_view
