@@ -6,15 +6,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_cart
 
-  def current_cart
-    session[:cart_id] = User.cart_id
-    # if session[:cart_id]
-    #   @cart = Cart.find(session[:cart_id])
-    # else
-    #   @cart = Cart.create
-    #   session[:cart_id] = @cart.
-    # end
-  end
   private
   def ransack
     # ransack

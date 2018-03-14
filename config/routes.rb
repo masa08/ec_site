@@ -32,7 +32,7 @@ resources :carts, only: [:show]
   post '/add_item' => 'carts#add_item'
   post '/update_item' => 'carts#update_item'
   post '/delete_item' => 'carts#delete_item'
-
+  get '/more_items' => 'carts#more_items', as: "more_items"
 # purchase関連
 get 'purchases/comfirmation' => 'purchases#comfirmation'
 get 'purchases/complete' => 'purchases#complete_view', as: "complete_view"
