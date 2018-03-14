@@ -1,12 +1,14 @@
 class CartsController < ApplicationController
   def show
-    @item_carts = ItemCart.all
     @cart = Cart.find(params[:id])
+    @item_carts = ItemCart.where(cart_id: @cart)
   end
 
   def add_item
     # get item.id
-    @item = params[:item_id]
+    @item_id = params[:item_id]
+    # get_item
+    @item = Item.find_by(id: @item_id)
     # Create Cart or Find Cart
     if Cart.where(user_id: current_user.id).presence
       @cart = Cart.find_by(user_id: current_user.id)
@@ -18,17 +20,26 @@ class CartsController < ApplicationController
     # get cart_id
     @cart_id = @cart.id
     # get all ids to save item_cart
+
     # Create ItemCart or Update item_cart
-    if ItemCart.where(cart_id: @cart_id, item_id: @item).presence
-      @item_cart = ItemCart.find_by(cart_id: @cart_id, item_id: @item)
-      @item_cart.item_count += 1
-      @item_cart.update(item_count: @item_cart.item_count)
+    if ItemCart.where(cart_id: @cart_id, item_id: @item_id).presence
+      @item_cart = ItemCart.find_by(cart_id: @cart_id, item_id: @item_id)
+      if @item.stock > @item_cart.item_count
+        @item_cart.item_count += 1
+        @item_cart.update(item_count: @item_cart.item_count)
+      else
+        # 購入数が元々ある数を超えた場合は追加しない。
+        return
+      end
     else
-      @item_cart = ItemCart.new(item_id: @item, cart_id: @cart_id, item_count: 1)
+      @item_cart = ItemCart.new(item_id: @item_id, cart_id: @cart_id, item_count: 1)
       @item_cart.save
     end
 
     redirect_to cart_path(@cart_id)
+  end
+  def more_items
+
   end
 
   def update_item
