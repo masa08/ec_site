@@ -8,10 +8,11 @@
                   <li class="nav-item">
                       <%= link_to 'ホーム', root_path, class: "nav-link header__nav--btn" %>
                   </li>
+                  <% if Cart.where(user_id: current_user.id).presence %>
                     <li class="nav-item">
                         <%= link_to "カート", cart_path(user), class: "nav-link header__nav--btn" %>
                     </li>
-
+                  <% end %>
                     <li class="nav-item">
                         <%= link_to "マイページ", user_path(user), class: "nav-link header__nav--btn" %>
                     </li>
