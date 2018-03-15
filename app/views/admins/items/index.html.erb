@@ -40,7 +40,8 @@
                         <div class="caption">
                             <p><b><%=item.item_name%></b></p>
                             <p>アーティスト名：<%=item.artist_name%></p>
-                            <p>形式：<%=%></p>
+                            <% binding.pry %>
+                            <p>形式：<%=item.type.id%></p>
                             <p>在庫数：<%=item.stock%></p>
                             <p>金額：¥1,000</p>
                             <p style="margin-bottom:0px">
