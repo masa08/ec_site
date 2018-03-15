@@ -54,8 +54,10 @@
                       <% end %>
                       <p>アーティスト名:<%= result.artist_name %></p>
                       <p><%= result.label %></p>
+                      <% if current_user %>
                       <% if result.stock != 0 %>
                       <%= link_to 'カートに追加', add_item_path(item_id: result.id), method: :post %>
+                      <% end %>
                       <% end %>
                   </div>
                   <% end %>
