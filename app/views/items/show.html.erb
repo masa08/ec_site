@@ -90,10 +90,12 @@
                             </tbody>
                         </table>
                         <div class="container-right__item-info__btn">
-                          <% if @item.stock == 0 %>
-                            <p style="color:red;">Sold Out</p>
-                          <% else %>
-                            <%= link_to 'カートに追加', add_item_path(item_id: @item.id), method: :post, class: "btn my-2 my-sm-0 btn__color" %>
+                          <% if current_user %>
+                            <% if @item.stock == 0 %>
+                              <p style="color:red;">Sold Out</p>
+                            <% else %>
+                              <%= link_to 'カートに追加', add_item_path(item_id: @item.id), method: :post, class: "btn my-2 my-sm-0 btn__color" %>
+                            <% end %>
                           <% end %>
                         </div>
 
