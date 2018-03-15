@@ -1,8 +1,6 @@
 class CartsController < ApplicationController
   def show
-    if Cart.where(user_id: current_user.id).presence
-      @cart = Cart.find(params[:id])
-    end
+    @cart = Cart.find(params[:id])
     @item_carts = ItemCart.where(cart_id: @cart)
   end
 
