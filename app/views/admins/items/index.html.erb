@@ -38,116 +38,22 @@
                             <%= attachment_image_tag item, :jacket_image, :fill, 150, 150 %>
                         </a>
                         <div class="caption">
-                            <p><b><%=item.item_name%></b></p>
+                            <p><b class="text-info"><%=item.item_name%></b></p>
                             <p>アーティスト名：<%=item.artist_name%></p>
-                            <% binding.pry %>
-                            <p>形式：<%=item.type.id%></p>
+                            
+                            <p>形式：</p>
                             <p>在庫数：<%=item.stock%></p>
                             <p>金額：¥1,000</p>
                             <p style="margin-bottom:0px">
-                                <a href="" class="btn btn-primary">詳細</a>
-                                <a href="" class="btn btn-primary">編集</a>
-                                <a href="" class="btn btn-primary">削除</a>
+                                <%= link_to "詳細", admins_item_path(item.id), :class => "btn btn-primary" %>
+                                <%= link_to "編集", edit_admins_item_path(item.id), :class => "btn btn-primary" %>
+                                <%= link_to "削除", admins_item_path(item), method: :delete, :class => "btn btn-primary" %>
                             </p>
                         </div>
                     </div>
                 </div>
                 <% end -%>
-                <div class="col-md-4">
-                    <div class="thumbnail" style="text-align:center;padding-top:10px;">
-                        <a href="">
-                            <img src="fickle_friends.jpg">
-                        </a>
-                        <div class="caption">
-                            <p><b>Brooklyn</b></p>
-                            <p>Fickle Friends</p>
-                            <p>形式：CD</p>
-                            <p>在庫数：45</p>
-                            <p>金額：¥1,000</p>
-                            <p style="margin-bottom:0px">
-                                <a href="" class="btn btn-primary">詳細</a>
-                                <a href="" class="btn btn-primary">編集</a>
-                                <a href="" class="btn btn-primary">削除</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="thumbnail" style="text-align:center;padding-top:10px;">
-                        <a href="">
-                            <img src="fickle_friends.jpg">
-                        </a>
-                        <div class="caption">
-                            <p><b>Brooklyn</b></p>
-                            <p>Fickle Friends</p>
-                            <p>形式：CD</p>
-                            <p>在庫数：45</p>
-                            <p>金額：¥1,000</p>
-                            <p style="margin-bottom:0px">
-                                <a href="" class="btn btn-primary">詳細</a>
-                                <a href="" class="btn btn-primary">編集</a>
-                                <a href="" class="btn btn-primary">削除</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="thumbnail" style="text-align:center;padding-top:10px;">
-                        <a href="">
-                            <img src="fickle_friends.jpg">
-                        </a>
-                        <div class="caption">
-                            <p><b>Brooklyn</b></p>
-                            <p>Fickle Friends</p>
-                            <p>形式：CD</p>
-                            <p>在庫数：45</p>
-                            <p>金額：¥1,000</p>
-                            <p style="margin-bottom:0px">
-                                <a href="" class="btn btn-primary">詳細</a>
-                                <a href="" class="btn btn-primary">編集</a>
-                                <a href="" class="btn btn-primary">削除</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="thumbnail" style="text-align:center;padding-top:10px;">
-                        <a href="">
-                            <img src="fickle_friends.jpg">
-                        </a>
-                        <div class="caption">
-                            <p><b>Brooklyn</b></p>
-                            <p>Fickle Friends</p>
-                            <p>形式：CD</p>
-                            <p>在庫数：45</p>
-                            <p>金額：¥1,000</p>
-                            <p style="margin-bottom:0px">
-                                <a href="" class="btn btn-primary">詳細</a>
-                                <a href="" class="btn btn-primary">編集</a>
-                                <a href="" class="btn btn-primary">削除</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="thumbnail" style="text-align:center;padding-top:10px;">
-                        <a href="">
-                            <img src="fickle_friends.jpg">
-                        </a>
-                        <div class="caption">
-                            <p><b>Brooklyn</b></p>
-                            <p>Fickle Friends</p>
-                            <p>形式：CD</p>
-                            <p>在庫数：45</p>
-                            <p>金額：¥1,000</p>
-                            <p style="margin-bottom:0px">
-                                <a href="" class="btn btn-primary">詳細</a>
-                                <a href="" class="btn btn-primary">編集</a>
-                                <a href="" class="btn btn-primary">削除</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                
 
 
 

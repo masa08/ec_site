@@ -18,8 +18,8 @@
                 <!-- main -->
                 <div class="page-header">
                     <h1><small>在庫詳細</small>
-                        <a href="" class="btn btn-primary btn-xs">編集</a>
-                        <a href="" class="btn btn-primary btn-xs">削除</a>
+                        <%= link_to " 編集", edit_admins_item_path(@item.id), :class => "btn btn-primary btn-xs" %>
+                        <%= link_to "削除", admins_item_path(@item), method: :delete, :class => "btn btn-primary btn-xs" %>
                     </h1>
                 </div>
                 <div class="col-md-4">
@@ -33,16 +33,34 @@
 
 
                     <table class="table table-hover">
-                        　<tr><th>商品名</th><td><%=@item.item_name%></td></tr>
-                        <tr><th>アーティスト</th><td>@item.artist_name</td></tr>
-                        <tr><th>形式</th><td>CD</td></tr>
-                            　<tr><th>ジャンル</th><td>ロック</td></tr>
-                              <tr><th>発売日</th><td>@item.release_date_id</td></tr>
-                                  <tr><th>レーベル</th><td><%=@item.label%></td></tr>
-                                  <tr><th>価格</th><td>¥<%=@item.price%></td></tr>
-                                  <tr><th>在庫数</th><td><%=@item.stock%></td></tr>
-                                  <tr><th>在庫追加</th><td><input type="number" name="example" min="0" max="500" value="0"><a href="" class="btn btn-primary btn-xs">更新</a></td></tr>
-                              </table>
+                        　<tr>
+                            <th>商品名</th><td><%=@item.item_name%></td>
+                        </tr>
+                        <tr>
+                            <th>アーティスト</th><td>@item.artist_name</td>
+                        </tr>
+                        <tr>
+                            <th>形式</th><td>CD</td>
+                        </tr>
+                        <tr>
+                                <th>ジャンル</th><td></td>
+                        </tr>
+                        <tr>
+                            <th>発売日</th><td>@item.release_date_id</td>
+                        </tr>
+                              <tr>
+                                <th>レーベル</th><td><%=@item.label%></td>
+                            </tr>
+                              <tr>
+                                <th>価格</th><td>¥<%=@item.price%></td>
+                            </tr>
+                              <tr>
+                                <th>在庫数</th><td><%=@item.stock%></td>
+                            </tr>
+                              <tr>
+                                <th>在庫追加</th><td><input type="number" name="example" min="0" max="500" value="0"><a href="" class="btn btn-primary btn-xs">更新</a></td>
+                            </tr>
+                          </table>
 
                               <div class="admin">
                                   <h1><small>曲名一覧</small></h1>
