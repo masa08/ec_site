@@ -1,21 +1,28 @@
-<h1>カート</h1>
+<div class="container">
+    <div class="row">
+        <%= render 'users/side_bar' %>
+        <div class="text-center col-lg-9 col-mg-9">
+            <div class="container-right clearfix">
 
-<% @item_carts.each do |item_cart| %>
-<div class="container-right__contents text-center col-lg-3 col-md-3">
- <%= attachment_image_tag item_cart.item, :jacket_image, :fill, 150, 150 %>
-<p><%= item_cart.item.item_name %></p>
-<h3 class="container-right__contents__title"><%= item_cart.item.item_name %></h3>
-<p>値段:<%= item_cart.item.price %>円</p>
-<p>残り:<%= item_cart.item.stock %></p>
-<p>アーティスト名:<%= item_cart.item.artist_name %></p>
-<p><%= item_cart.item.label %></p>
-<p><%= item_cart.item_count %></p>
-<%= link_to 'カートから1つ削除', delete_item_path(id: item_cart.id), method: :post %>
+                <h1 class="container-right_cart_title">カート</h1>
+
+                <% @item_carts.each do |item_cart| %>
+                <div class="container-right__contents text-center col-lg-3 col-md-3">
+                    <%= attachment_image_tag item_cart.item, :jacket_image, :fill, 150, 150 %>
+                    <p><%= item_cart.item.item_name %></p>
+                    <h3 class="container-right__contents__title"><%= item_cart.item.item_name %></h3>
+                    <p>値段:<%= item_cart.item.price %>円</p>
+                    <p>残り:<%= item_cart.item.stock %></p>
+                    <p>アーティスト名:<%= item_cart.item.artist_name %></p>
+                    <p><%= item_cart.item.label %></p>
+                    <p><%= item_cart.item_count %></p>
+                    <%= link_to 'カートから1つ削除', delete_item_path(id: item_cart.id), method: :post %>
+                </div>
+                <% end %>
+            </div>
+            <div class="purchase">
+            <%= link_to '購入する', purchases_complete_path(cart_id: @cart.id),class: 'btn my-2 my-sm-0 btn__color', method: :post %>
+            </div>
+        </div>
+    </div>
 </div>
-<% end %>
-
-
-<%= link_to '購入する', purchases_complete_path(cart_id: @cart.id), method: :post %>
-
-<!-- アクションでそれを展開すること,
-展開したのちにitem.item_countからitemcart.item_countを引くこと -->

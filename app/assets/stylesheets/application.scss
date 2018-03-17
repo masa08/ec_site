@@ -77,7 +77,11 @@ border-spacing: 0;
   background-color: #ce93d8;
   color: #fff;
 }
-
+.clearfix::after{
+  content:"";
+  display: block;
+  clear: both;
+}
 /* Please write your code from here */
 
 /* header from here */
@@ -86,7 +90,8 @@ header{
 }
 .header__logo{
   display: inline-block;
-  margin: 0px 0px 0px 20px !important;
+  padding: 15px;
+  font-size:20px;
 }
 .navbar{
   margin-bottom: 0 !important;
@@ -103,4 +108,8 @@ header{
 }
 .header__nav--search{
   margin: 10px 5px 0 5px;
+}
+
+.container-right{
+  margin-top: 70px;
 }
