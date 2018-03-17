@@ -86,3 +86,7 @@ gem 'awesome_print'
 
 # introduce bootstrap
 gem 'bootstrap-sass'
+
+
+#DBテストデータ投入用
+gem 'seed-fu'

@@ -6,4 +6,9 @@ class Item < ApplicationRecord
   belongs_to :type, optional: true
 
   attachment :jacket_image
+
+  # 小野瀬サイドバー検証中
+  scope :get_by_types_id, ->(types_id) {
+  where(types_id: types_id)
+  }
 end

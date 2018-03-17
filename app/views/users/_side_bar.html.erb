@@ -1,4 +1,7 @@
 
+
+
+
 <div class="col-md-3 side_bar">
         <div class="panel panel-default">
                 <div class="panel-heading">
@@ -22,7 +25,9 @@
         <h3 class="panel-heading">タイプ</h3>
         <br>
                 <ul class="nav nav-pills nav-stacked">
-            <li><%= link_to "CD", items_path %></li>
+            <li><%= link_to "CD", items_path(types_id: 1) %>
+                
+            </li>
             <li><%= link_to "DVD", items_path %></li>
             <li><%= link_to "レコード", items_path %></li>
 
