@@ -12,14 +12,15 @@ class ApplicationController < ActionController::Base
   private
   def genre_ransack
     @genres = Genre.all
-    @genre_search = Item.ransack(params[:q])
-    @genre_results = @genre_search.result
+    @genre_name = params[:genre_name]
+    # @genre_search = Item.ransack(params[:q])
+    # @genre_results = @genre_search.result
   end
 
-  def type_ransack
+  def type
     @types = Type.all
-    @type_search = Item.ransack(params[:q])
-    @type_results = @type_search.result
+    # @type_search = Item.ransack(params[:q])
+    # @type_results = @type_search.result
   end
 
   def ransack
