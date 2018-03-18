@@ -62,13 +62,14 @@
                               </tr>
                           </thead>
                           <tbody>
+                            <% @histories.each do |history| %>
                               <tr>
-                                <!-- eachじゃんね -->
-                                  <th>1</th>
+                                  <th><%= history.id %></th>
                                   <td>2017/09/22</td>
                                   <td>配送済み</td>
                                   <td><%= link_to "詳細",  user_histories_path(@user), class: "btn my-2 my-sm-0 btn__color" %></td>
                               </tr>
+                              <% end %>
                               <tr>
                                   <th>2</th>
                                   <td>2017/11/22</td>

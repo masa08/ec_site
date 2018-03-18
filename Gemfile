@@ -90,6 +90,8 @@ gem 'bootstrap-sass'
 # 複数フォーム 作成gem
 gem 'nested_form_fields'
 
-
+#テストデータ投入
 gem 'seed-fu'
+
+#論理削除
 gem 'kakurenbo-puti'
