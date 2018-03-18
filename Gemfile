@@ -86,3 +86,10 @@ gem 'awesome_print'
 
 # introduce bootstrap
 gem 'bootstrap-sass'
+
+# 複数フォーム 作成gem
+gem 'nested_form_fields'
+
+
+gem 'seed-fu'
+gem 'kakurenbo-puti'
