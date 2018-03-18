@@ -16,7 +16,7 @@ root "items#index"
 resources :users, only: [:edit, :update, :show] do
   resource :histories, only: [:show]
 end
-
+post '/admins/items' => 'admins/items#create'
 
 resources :items
 
