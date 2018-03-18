@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
   	@user = current_user
+    @historiess = current_user.histories
   end
 
   def edit
