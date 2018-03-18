@@ -2,15 +2,15 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   before_action :ransack
-  before_action :genre_ransack
-  before_action :type_ransack
+  before_action :genre
+  before_action :type
 
   protect_from_forgery with: :exception
 
   helper_method :current_cart
 
   private
-  def genre_ransack
+  def genre
     @genres = Genre.all
     @genre_name = params[:genre_name]
     # @genre_search = Item.ransack(params[:q])
