@@ -13,6 +13,9 @@ devise_for :users, controllers: {
 }
 root "items#index"
 
+post '/genres' => 'application#genre'
+post '/types' => 'application#type'
+
 resources :users, only: [:edit, :update, :show] do
   resource :histories, only: [:show]
 end
