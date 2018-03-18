@@ -4,12 +4,13 @@
 
 /* mainVisual from here */
 .mainVisual{
-  height: 300px;
-}
-.mainVisual__img{
-  height: 300px;
+  height: 400px;
   width: 100%;
+  background-image: url('top_image.png');
+  background-size: cover;
+  background-position: 0% 35%;
 }
+
 /* container from here */
 
 .container-left{

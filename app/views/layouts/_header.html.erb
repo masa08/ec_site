@@ -1,14 +1,18 @@
 <header class="w-100">
             <div class="logo float-left">
-                <h1 class="header__logo">Logo</h1>
+                <%= link_to 'meetic', root_path, class: "header__logo" %>
             </div>
             <nav class="navbar navbar-toggleable-md navbar-light bg-faded float-right">
                 <% if user_signed_in? %>
                 <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <%= link_to 'ホーム', root_path, class: "nav-link header__nav--btn" %>
+                  </li>
+                  <% if Cart.where(user_id: current_user.id).presence %>
                     <li class="nav-item">
                         <%= link_to "カート", cart_path(user), class: "nav-link header__nav--btn" %>
                     </li>
-
+                  <% end %>
                     <li class="nav-item">
                         <%= link_to "マイページ", user_path(user), class: "nav-link header__nav--btn" %>
                     </li>
@@ -17,7 +21,6 @@
                         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link header__nav--btn" %>
                     </li>
 
-
                     <li class="nav-item">
                       <%= search_form_for @search, html: {class: "form-inline my-2 my-lg-0 header__nav--search"} do |f| %>
 
@@ -25,10 +28,6 @@
                         <%= f.search_field :item_name_cont, class: "form-control mr-sm-2", placeholder: "Search" %>
                         <%= f.submit "検索", class: 'btn my-2 my-sm-0 btn__color' %>
                         <% end %>
-                        <!-- <form class="form-inline my-2 my-lg-0 header__nav--search">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                            <button class="btn my-2 my-sm-0 btn__color" type="submit">Search</button>
-                        </form> -->
                     </li>
                 </ul>
             <% else %>

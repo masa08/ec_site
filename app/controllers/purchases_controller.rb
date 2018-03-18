@@ -4,7 +4,7 @@ class PurchasesController < ApplicationController
 
   def complete
     # get cart.id
-    @cart = Cart.find_by(params[:cart_id])
+    @cart = Cart.find_by(user_id: current_user)
     # get items in cart
     @cart_items = @cart.item_carts
     @cart_items.each do |cart_item|
@@ -21,4 +21,6 @@ class PurchasesController < ApplicationController
   def complete_view
 
   end
+
+
 end

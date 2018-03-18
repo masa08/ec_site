@@ -15,28 +15,7 @@
 <% end %>
 <div class="container">
     <div class="row">
-        <div class="col-lg-3 col-md-3">
-            <div class="container-left">
-                <h3 class="container-left__title">Category</h3>
-                <ul>
-                    <li>w</li>
-                    <li>w</li>
-                    <li>w</li>
-                </ul>
-                <h3 class="container-left__title">Genre</h3>
-                <ul>
-                    <li>w</li>
-                    <li>w</li>
-                    <li>w</li>
-                </ul>
-                <h3 class="container-left__title">Type</h3>
-                <ul>
-                    <li>w</li>
-                    <li>w</li>
-                    <li>w</li>
-                </ul>
-            </div>
-        </div>
+              <%= render 'users/side_bar' %>
         <div class="col-lg-9 col-md-9">
             <div class="container-right">
                 <h1 class="container-right__title text-center">商品一覧</h1>
@@ -47,10 +26,18 @@
                       <%= attachment_image_tag result, :jacket_image, :fill, 150, 150 %>
                       <h3 class="container-right__contents__title"><%= result.item_name %></h3>
                       <p>値段:<%= result.price %>円</p>
-                      <p>残り:<%= result.stock %></p>
+                      <% if result.stock == 0 %>
+                        <p style="color:red;">Sold Out</p>
+                      <% else %>
+                        <p>残り:<%= result.stock %></p>
+                      <% end %>
                       <p>アーティスト名:<%= result.artist_name %></p>
                       <p><%= result.label %></p>
+                      <% if current_user %>
+                      <% if result.stock != 0 %>
                       <%= link_to 'カートに追加', add_item_path(item_id: result.id), method: :post %>
+                      <% end %>
+                      <% end %>
                   </div>
                   <% end %>
                   <% end %>
@@ -61,11 +48,19 @@
                       <%= attachment_image_tag item, :jacket_image, :fill, 150, 150 %>
                       <h3 class="container-right__contents__title"><%= item.item_name %></h3>
                       <p>値段:<%= item.price %>円</p>
-                      <p>残り:<%= item.stock %></p>
+                      <% if item.stock == 0 %>
+                        <p style="color:red;">Sold Out</p>
+                      <% else %>
+                        <p>残り:<%= item.stock %></p>
+                      <% end %>
                       <p>アーティスト名:<%= item.artist_name %></p>
                       <p><%= item.label %></p>
                       <%= item.id  %>
-                      <%= link_to 'カートに追加', add_item_path(item_id: item.id), method: :post %>
+                      <% if current_user %>
+                        <% if item.stock != 0 %>
+                          <%= link_to 'カートに追加', add_item_path(item_id: item.id), method: :post %>
+                        <% end %>
+                      <% end %>
                   </div>
                   <% end %>
                 <% end %>

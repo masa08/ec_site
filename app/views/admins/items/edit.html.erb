@@ -21,32 +21,42 @@
 <!-- main -->
         <div class="col-md-9">
             <div class="page-header">
-                        <h1><small>新規在庫追加</small></h1>
+                        <h1><small>在庫編集</small></h1>
                     </div>
 
 				<%= form_for(@item) do |f| %>
                     商品画像<%= f.attachment_field :jacket_image %>
-                    <%= fields_for(@genre) do |i| %>
-                    
-                    ジャンル <div> <%= i.collection_select :genre_id, Genre.all, :id, :genre_name, :class => 'form-control' %></div>
-                    <% end %>
-
-                    <p>名前</p><%= f.text_field :item_name, :class => 'form-control', :placeholder => '商品名を入力してください' %>
+                    名前<%= f.text_field :item_name, :class => 'form-control', :placeholder => '商品名を入力してください' %>
                     
                     アーティスト名<%= f.text_field :artist_name, :class => 'form-control', :placeholder => 'アーティスト名を入力してください' %>
-                    
                     価格<%= f.number_field :price, :class => 'form-control', :placeholder => '商品の価格を入力してください' %>
                     ラベル<%= f.text_field :label, :class => 'form-control', :placeholder => 'レコード会社を入力してください' %>
                     CD or レコード<%= f.text_field :types_id, :class => 'form-control', :placeholder => '' %>
                     リリース日<%= f.text_field :release_date_id, :class => 'form-control', :placeholder => 'リリースされた年月日を入力してください' %>
-
+                    <%= fields_for(@genre) do |i| %>
+                    ジャンル <div> <%= i.collection_select :genre_id, Genre.all, :id, :genre_name, :class => 'form-control' %></div>
+                    <% end %>
                     数<%= f.number_field :stock %>
-                
-                <%= f.submit "追加", :class => 'btn btn-primary' %>
-<% end -%>
+                    <%= f.submit "編集完了", :class => 'btn btn-primary' %>
+                <% end -%>
 
                 
-                
+                <div class="form-group">
+                    <label>ジャンル</label>
+                    <select name="area" class="form-control col-md-4">
+                        <option value="ポップ">ポップ</option>
+                        <option value="ロック">ロック</option>
+                        <option value="ジャズ">ジャズ</option>
+                        <option value="ブルース">ブルース</option>
+                        <option value="R＆B">R＆B</option>
+                        <option value="クラシック">クラシック</option>
+                        <option value="演歌">演歌</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>レーベル</label>
+                    <input type="text" name="email" class="form-control" placeholder="レーベルを入力して下さい">
+                </div>
                 
             </form>
 
