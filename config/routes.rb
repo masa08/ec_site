@@ -31,12 +31,15 @@ resources :carts, only: [:show]
 
   post '/add_item' => 'carts#add_item'
   post '/update_item' => 'carts#update_item'
-  delete '/delete_item' => 'carts#delete_item'
-
-
-post 'purchases/comfirmation' => 'purchases#comfirmation'
-get 'purchases/complete' => 'purchases#complete'
+  post '/delete_item' => 'carts#delete_item'
+  get '/more_items' => 'carts#more_items', as: "more_items"
+# purchase関連
+get 'purchases/comfirmation' => 'purchases#comfirmation'
+get 'purchases/complete' => 'purchases#complete_view', as: "complete_view"
+post 'purchases/complete' => 'purchases#complete'
 get 'purchases/thankyou' => 'purchases#thankyou'
+
+
 
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
