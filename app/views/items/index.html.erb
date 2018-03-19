@@ -35,7 +35,7 @@
                       <p><%= result.label %></p>
                       <% if current_user %>
                       <% if result.stock != 0 %>
-                      <%= link_to 'カートに追加', add_item_path(item_id: result.id), method: :post %>
+                      <%= link_to 'カートに追加', add_item_path(item_id: result.id), method: :post, class: "btn my-2 my-sm-0 btn__color cart_btn" %>
                       <% end %>
                       <% end %>
                   </div>
@@ -58,7 +58,7 @@
                       <%= item.id  %>
                       <% if current_user %>
                         <% if item.stock != 0 %>
-                          <%= link_to 'カートに追加', add_item_path(item_id: item.id), method: :post %>
+                          <%= link_to 'カートに追加', add_item_path(item_id: item.id), method: :post, class: "btn my-2 my-sm-0 btn__color cart_btn" %>
                         <% end %>
                       <% end %>
                   </div>
