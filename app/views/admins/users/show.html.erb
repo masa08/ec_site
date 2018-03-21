@@ -24,13 +24,13 @@
                             <a href="" class="btn btn-primary btn-xs">削除</a>
                         </h1>
                     </div>
-
+                    
                     <table class="table table-hover">
-                    　<tr><th>名前</th><td>ほげ</td></tr>
-                      <tr><th>カタカナ</th><td>ホゲ</td></tr>
-                      <tr><th>メールアドレス</th><td>hoge@gmail.com</td> <tr><th>郵便番号</th><td>333-3333</td></tr>
-                      <tr><th>住所</th><td>東京都渋谷区1111111111</td></tr>
-                      <tr><th>電話番号</th><td>090-0000-0000</td></tr></tr>
+                    　<tr><th>お名前(漢字)</th><td><%= @user.user_name_kanji %></td></tr>
+                      <tr><th>お名前(カナ)</th><td><%= @user.user_name_kana %></td></tr>
+                      <tr><th>メールアドレス</th><td>@user.email</td> <tr><th>郵便番号</th><td><%= @user.postal_code %></td></tr>
+                      <tr><th>住所</th><td><%= @user.address %></td></tr>
+                      <tr><th>電話番号</th><td><%= @user.phone_number %></td></tr></tr>
                   </table>
 
                   <div class="admin">
