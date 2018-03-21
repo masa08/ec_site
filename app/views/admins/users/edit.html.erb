@@ -24,7 +24,7 @@
 
 
             
-            <%= form_for(@user) do |f| %>
+            <%= form_for([:admins, @user]) do |f| %>
                 
                 <%= f.label :user_name_kanji, "お名前(漢字)" %>
                 <%= f.text_field :user_name_kanji, :class => 'form-control'  %>

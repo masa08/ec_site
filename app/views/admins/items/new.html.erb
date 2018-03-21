@@ -24,7 +24,7 @@
                         <h1><small>新規在庫追加</small></h1>
                     </div>
 
-				<%= form_for(@item) do |f| %>
+				<%= form_for([:admins, @item]) do |f| %>
                     商品画像<%= f.attachment_field :jacket_image %>
                     <%= fields_for(@genre) do |i| %>
                     
@@ -43,12 +43,9 @@
                     数<%= f.number_field :stock %>
                 
                 <%= f.submit "追加", :class => 'btn btn-primary' %>
-<% end -%>
+            <% end -%>
 
-                
-                
-                
-            </form>
+
 
         </div>
 

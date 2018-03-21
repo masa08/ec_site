@@ -24,7 +24,7 @@
                         <h1><small>在庫編集</small></h1>
                     </div>
 
-				<%= form_for(@item) do |f| %>
+				<%= form_for([:admins, @item]) do |f| %>
                     商品画像<%= f.attachment_field :jacket_image %>
                     名前<%= f.text_field :item_name, :class => 'form-control', :placeholder => '商品名を入力してください' %>
                     
