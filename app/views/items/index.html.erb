@@ -31,6 +31,13 @@
                   </div>
                   <% end %>
                   <% end %>
+                <% elsif params["type.id"].present? %>
+                  <% @items.each do |item| %>
+                    <h3 class="container-right__contents__title"><%= item.item_name %></h3>
+
+                  <% end %>
+
+
                 <% else %>
                   <% @items.each do |item| %>
                   <%= link_to item_path(item.id) do %>
