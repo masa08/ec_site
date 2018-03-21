@@ -1,0 +1,74 @@
+<div class="container">
+        <div class="row">
+            <section class="admin">
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Menu
+                        </div>
+
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href=""><i class="glyphicon glyphicon-pencil"></i> 購入履歴一覧</a></li>
+                            <li><a href=""><i class="glyphicon glyphicon-download"></i> ユーザー一覧</a></li>
+                            <li><a href=""><i class="glyphicon glyphicon-leaf"></i> 在庫一覧</a></li>
+                            <li><a href=""><i class="glyphicon glyphicon-folder-open"></i> 新規在庫追加</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+<!-- main -->
+        <div class="col-md-9">
+            <div class="page-header">
+                        <h1><small>ユーザー情報編集</small></h1>
+                    </div>
+
+
+            
+            <%= form_for(@user) do |f| %>
+                
+                <%= f.label :user_name_kanji, "お名前(漢字)" %>
+                <%= f.text_field :user_name_kanji, :class => 'form-control'  %>
+
+
+ 
+                <%= f.label :user_name_kana, "お名前(カナ)" %>
+                <%= f.text_field :user_name_kana, :class => 'form-control' %>
+
+
+                <%= f.label :email, "メールアドレス" %>
+                <%= f.text_field :email, :class => 'form-control' %>
+
+
+                <%= f.label :postal_code, "郵便番号" %>
+                <%= f.text_field :postal_code, :class => 'form-control' %>
+
+
+                <%= f.label :address, "住所" %>
+                <%= f.text_field :address, :class => 'form-control' %>
+
+                <%= f.label :phone_number, "電話番号" %>
+                <%= f.text_field :phone_number, :class => 'form-control' %>
+
+                
+                <%= f.submit "編集完了", :class => 'btn btn-primary' %>
+
+            <% end -%>
+
+                <!-- submit -->
+                
+
+
+            
+        </div>
+
+        </div>
+
+
+
+
+
+        <p class="text-muted text-center">&copy; 2017-2018</p>
+
+    </section>
+    </div>
+</div>

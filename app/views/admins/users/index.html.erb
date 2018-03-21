@@ -41,14 +41,17 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <% @users.each do |user| %>
                         <tr>
-                            <td>01</td><td>hoge foo</td><td>hoge@foo.com</td><td>03-1234-5678</td>
+                            <td><%= user.id %></td><td><%= user.user_name_kana %></td><td><%= user.email %></td><td><%= user.phone_number %></td>
                             <td>
-                                <a href="" class="btn btn-primary btn-xs">詳細</a>
+                                <%= link_to "詳細", admins_user_path(user.id), :class => "btn btn-primary btn-xs"   %>
+                                
                                 <a href="" class="btn btn-primary btn-xs">編集</a>
                                 <a href="" class="btn btn-primary btn-xs">削除</a>
                             </td>
                         </tr>
+                        <% end %>
                         <tr>
                             <td>02</td><td>hoge foo</td><td>hoge@foo.com</td><td>03-1234-5678</td>
                             <td>
@@ -65,30 +68,7 @@
                                 <a href="" class="btn btn-primary btn-xs">削除</a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>04</td><td>hoge foo</td><td>hoge@foo.com</td><td>03-1234-5678</td>
-                            <td>
-                                <a href="" class="btn btn-primary btn-xs">詳細</a>
-                                <a href="" class="btn btn-primary btn-xs">編集</a>
-                                <a href="" class="btn btn-primary btn-xs">削除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>05</td><td>hoge foo</td><td>hoge@foo.com</td><td>03-1234-5678</td>
-                            <td>
-                                <a href="" class="btn btn-primary btn-xs">詳細</a>
-                                <a href="" class="btn btn-primary btn-xs">編集</a>
-                                <a href="" class="btn btn-primary btn-xs">削除</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>06</td><td>hoge foo</td><td>hoge@foo.com</td><td>03-1234-5678</td>
-                            <td>
-                                <a href="" class="btn btn-primary btn-xs">詳細</a>
-                                <a href="" class="btn btn-primary btn-xs">編集</a>
-                                <a href="" class="btn btn-primary btn-xs">削除</a>
-                            </td>
-                        </tr>
+                        
 
                     </tbody>
                 </table>
