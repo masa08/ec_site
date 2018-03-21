@@ -55,7 +55,7 @@
                       <table class="table">
                           <thead>
                               <tr>
-                                  <th>id</th>
+                                  <th></th>
                                   <th>購入日時</th>
                                   <th>ステータス</th>
                                   <th></th>
@@ -65,23 +65,11 @@
                             <% @histories.each do |history| %>
                               <tr>
                                   <th><%= history.id %></th>
-                                  <td>2017/09/22</td>
-                                  <td>配送済み</td>
-                                  <td><%= link_to "詳細",  user_histories_path(@user), class: "btn my-2 my-sm-0 btn__color" %></td>
+                                  <td><%= history.created_at %></td>
+                                  <td><%= history.status %></td>
+                                  <td><%= link_to "詳細",  user_histories_path(history), class: "btn my-2 my-sm-0 btn__color" %></td>
                               </tr>
                               <% end %>
-                              <tr>
-                                  <th>2</th>
-                                  <td>2017/11/22</td>
-                                  <td>配送済み</td>
-                                  <td><%= link_to "詳細",  user_histories_path(@user), class: "btn my-2 my-sm-0 btn__color" %></td>
-                              </tr>
-                              <tr>
-                                  <th>3</th>
-                                  <td>2017/12/22</td>
-                                  <td>配送済み</td>
-                                  <td><%= link_to "詳細",  user_histories_path(@user), class: "btn my-2 my-sm-0 btn__color" %></td>
-                              </tr>
                           </tbody>
                         </table>
                     </div>
@@ -90,3 +78,5 @@
             </div>
         </div>
     </div>
+    <%= link_to "パスワードを変更する", edit_user_path(current_user), class: "btn my-2 my-sm-0 btn__color" %>
+    <%= link_to "退会する", new_goodbye_path, class: "btn my-2 my-sm-0 btn__color" %>

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
   	@user = current_user
+    @histories = @user.histories
   end
 
   def edit
@@ -8,18 +9,24 @@ class UsersController < ApplicationController
 
   end
   def update
-  	user = current_user
-  	user.update(user_params)
-
-  	redirect_to user_path(user)
+  	@user = current_user
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render action: :edit
+    end
   end
 
   def history_show
   	@user = current_user
   end
 
-  def goodbye_confirmation
+  def destroy
+    user = User.find(params[:id])
+    user.soft_destroy
+    redirect_to items_path
   end
+
 
   private
    def user_params

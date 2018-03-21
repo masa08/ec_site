@@ -1,0 +1,11 @@
+
+
+
+  <%= form_for(@goodbye, html: {class: 'form-mypage-edit'}) do |f| %>
+  <div class="form-label-group">
+      <%= f.label :reason, "退会理由" %>
+      <%= f.text_area :reason, class: "form-control", placeholder: "退会理由を記入してください" %>
+      <br />
+  </div>
+  <%= f.submit "送信", class: 'btn btn-primary glyphicon' %>
+  <% end %>

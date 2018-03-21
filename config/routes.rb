@@ -16,9 +16,16 @@ root "items#index"
 post '/genres' => 'application#genre'
 post '/types' => 'application#type'
 
-resources :users, only: [:edit, :update, :show] do
-  resource :histories, only: [:show]
+resources :users, only: [:edit, :update, :show, :destroy] do
+  resources :histories, only: [:show]
 end
+  resources :goodbyes, only: [:new, :create] do
+    collection do
+        get 'comfirmation'
+      end
+  end
+
+
 post '/admins/items' => 'admins/items#create'
 
 resources :items
