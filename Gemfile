@@ -95,3 +95,6 @@ gem 'seed-fu'
 
 #論理削除
 gem 'kakurenbo-puti'
+
+# エラー文日本語化
+gem 'rails-i18n'

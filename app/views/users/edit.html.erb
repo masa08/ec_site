@@ -6,7 +6,9 @@
       <div class="text-center user_edit">
           <h1 class="h3 font-weight-normal">個人情報編集</h1>
       </div>
-      <% if @user.errors.any? %>
+
+  <%= form_for(@user, html: {class: 'form-mypage-edit'}) do |f| %>
+        <% if @user.errors.any? %>
       <div id="error_explanation" class="alert alert-danger">
         <ul>
           <% @user.errors.full_messages.each do |message| %>
@@ -14,8 +16,9 @@
           <% end %>
       </ul>
   </div>
+
+
   <% end %>
-  <%= form_for(@user, html: {class: 'form-mypage-edit'}) do |f| %>
 
   <div class="form-label-group">
       <%= f.label :user_name_kanji, "名前(漢字)" %>
@@ -47,16 +50,7 @@
     <%= f.text_field :email, class: "form-control", placeholder: "メールアドレス" %>
 </div>
 
-<div class="form-label-group">
-    <%= f.label :password, "パスワード" %>
-    <%= f.password_field :postal_code, class: "form-control", placeholder: "パスワード" %>
-</div>
 
-<div class="form-label-group">
-    <%= f.label :password_confirmation, 'パスワード再入力' %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "パスワード" %>
-</div>
-<br>
 
 <%= f.submit "変更", class: 'btn btn-primary glyphicon glyphicon-book' %>
 

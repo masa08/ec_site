@@ -1,0 +1,12 @@
+ja:  
+        errors:
+          messages:
+            not_saved:
+              user_name_kanji: 名前(漢字)
+              user_name_kana: 名前(カタカナ)
+              email: メールアドレス
+              address: 住所
+              postal_code: 郵便番号
+              phone_number: 電話番号
+              password: パスワード
+              password_confirmation: パスワード(確認)

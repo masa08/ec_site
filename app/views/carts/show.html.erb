@@ -1,6 +1,8 @@
 <div class="container">
     <div class="row">
         <%= render 'users/side_bar' %>
+
+
         <div class="text-center col-lg-9 col-mg-9">
             <div class="container-right clearfix">
 
@@ -22,6 +24,8 @@
             </div>
             <div class="purchase">
             <%= link_to '購入する', purchases_complete_path(cart_id: @cart.id),class: 'btn my-2 my-sm-0 btn__color', method: :post %>
+            <br>
+            <%= link_to '買い物を続ける', items_path, class: 'btn my-2 my-sm-0 btn__color' %>
             </div>
             <% else %>
 <p class="no_cart">現在カートには何も入っていません。</p>

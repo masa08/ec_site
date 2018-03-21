@@ -1,0 +1,2 @@
+module GoodbyesHelper
+end

@@ -12,9 +12,53 @@
         <h3 class="panel-heading">タイプ</h3>
         <ul class="nav nav-pills nav-stacked">
             <% @types.each do |type| %>
-            <li><%= link_to type.category_name, items_path %></li>
+            <li><%= link_to type.category_name, items_path(types.id) %></li>
             <% end %>
         </ul>
 
     </div>
 </div>
+
+
+
+<!--  比較用 -->
+
+<<<<<<< HEAD
+<div class="col-lg-3 side_bar">
+=======
+
+
+
+<div class="col-md-3 side_bar">
+>>>>>>> サイドバー
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    ジャンル
+                </div>
+
+                <ul class="nav nav-pills nav-stacked">
+
+            <li><%= link_to "ロック", items_path %></li>
+            <li><%= link_to "J-POP", items_path %></li>
+            <li><%= link_to "K-POP", items_path %></li>
+            <li><%= link_to "洋楽", items_path %></li>
+            <li><%= link_to "R&B", items_path %></li>
+            <li><%= link_to "バラード", items_path %></li>
+            <li><%= link_to "HIP-POP", items_path %></li>
+            <li><%= link_to "EDM", items_path %></li>
+            <li><%= link_to "演歌", items_path %></li>
+            <li><%= link_to "バイキングメタル", items_path %></li>
+        </ul>
+        <br>
+        <h3 class="panel-heading">タイプ</h3>
+        <br>
+                <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to "CD", items_path(types_id: 1) %>
+                
+            </li>
+            <li><%= link_to "DVD", items_path %></li>
+            <li><%= link_to "レコード", items_path %></li>
+
+        </ul>
+            </div>
+        </div>
