@@ -73,10 +73,13 @@
                           </tbody>
                         </table>
                     </div>
+                      <div class="text-center">
 
+                      <%= link_to "パスワードを変更する", edit_user_path(current_user), class: "btn my-2 my-sm-0 btn__color" %>
+                      <%= link_to "退会する", new_goodbye_path, class: "btn my-2 my-sm-0 btn__color" %>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <%= link_to "パスワードを変更する", edit_user_path(current_user), class: "btn my-2 my-sm-0 btn__color" %>
-    <%= link_to "退会する", new_goodbye_path, class: "btn my-2 my-sm-0 btn__color" %>
+    
