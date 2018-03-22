@@ -22,11 +22,6 @@ class UsersController < ApplicationController
   	@user = current_user
   end
 
-  def destroy
-    user = User.find(params[:id])
-    user.soft_destroy
-    redirect_to items_path
-  end
 
 
   private

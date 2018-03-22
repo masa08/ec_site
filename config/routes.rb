@@ -16,7 +16,7 @@ root "items#index"
 post '/genres' => 'application#genre'
 post '/types' => 'application#type'
 
-resources :users, only: [:edit, :update, :show, :destroy] do
+resources :users, only: [:edit, :update, :show] do
   resources :histories, only: [:show]
 end
   resources :goodbyes, only: [:new, :create] do
