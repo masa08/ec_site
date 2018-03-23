@@ -6,26 +6,50 @@
                 <!-- main -->
                 <div class="page-header">
                     <h1><small>購入履歴詳細</small>
-                        <a href="" class="btn btn-primary btn-xs">編集</a>
-                        <a href="" class="btn btn-primary btn-xs">削除</a>
+                        <%= link_to "編集", edit_admins_history_path(history.id), :class => "btn btn-primary btn-xs" %>
+                        <%= link_to "削除", admins_history_path(history), method: :delete, :class => "btn btn-primary btn-xs" %>
                     </h1>
                 </div>
                 <div class="col-md-9">
                     <h1><small>購入情報</small></h1>
                     <table class="table table-hover">
-                        　<tr><th>ステータス</th><td>発送済</td></tr>
-                        　<tr><th>購入者名</th><td><a href="">ほげ</a></td></tr>
-                        <tr><th>購入日</th><td>2017-08-10</td></tr>
-                        <tr><th>受取主</th><td>花子</td></tr>
-                        <tr><th>郵便番号</th><td>333−3333</td></tr>
-                        <tr><th>配送先住所</th><td>東京都板橋区阿佐ヶ谷2222−22</td></tr>
-                        <tr><th>支払い方法</th><td>カード</td></tr>
-                        <tr><th>配送方法</th><td>通常便</td></tr>
-                        <tr><th>合計枚数</th><td>10</td></tr>
-                        <tr><th>合計金額</th><td>¥10,000</td></tr>
+                    　  <tr>
+                            <th>ステータス</th>
+                            <td><%= @history.status %></td>
+                        </tr>
+                        <tr>
+                            <th>購入者名</th>
+                            <td><%= link_to @history.user.user_name_kana %></td>
+                        </tr>
+                        <tr>
+                            <th>購入日</th>
+                            <td><%= @history.created_at %></td>
+                        </tr>
+                        <tr>
+                            <th>受取主</th>
+                            <td><%= @history.send_name_kana %></td>
+                        </tr>
+                        <tr>
+                            <th>郵便番号</th>
+                            <td><%= @history.send_postal_code %></td>
+                        </tr>
+                        <tr>
+                            <th>配送先住所</th>
+                            <td><%= @history.send_address %></td>
+                        </tr>
+                        <tr>
+                            <th>支払い方法</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>配送方法</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>合計金額</th>
+                            <td><%= number_to_currency(@history.total_price) %></td>
+                        </tr>
                     </table>
-
-
 
                 <div class="history-item">
                     <h1><small>購入商品情報</small></h1>
