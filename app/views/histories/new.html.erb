@@ -1,0 +1,56 @@
+     <div class="container">
+
+        <%= render 'users/side_bar' %>
+
+        <div class="col-lg-9 col-md-9">
+
+
+            <div class="text-center title">
+                <h1 class="h3 font-weight-normal info"><%= @user.user_name_kana %> さん 配送 お支払の手続き</h1>
+            </div>
+
+
+            <%= form_for @history, url: {controller: "histories",action: 'comfirmation'}, method: "get", html: {class: "form-sendinfo"} do |f| %>
+
+
+            <div class="form-label-group">
+              <%= f.label :send_name_kanji,"受取主氏名(漢字)" %>
+              <%= f.text_field :send_name_kanji,  placeholder:"受取主氏名(漢字)", class: "form-control" %>
+          </div>
+          <div class="form-label-group">
+              <%= f.label :send_name_kana,"受取主氏名(カタカナ)" %>
+              <%= f.text_field :send_name_kana,  placeholder:"受取主氏名(カタカナ)", class: "form-control" %>
+          </div>
+          <div class="form-label-group">
+              <%= f.label :send_postal_code,"郵便番号" %>
+              <%= f.text_field :send_postal_code,  placeholder:"郵便番号", class: "form-control" %>
+          </div>
+
+          <div class="form-label-group">
+              <%= f.label :send_address,"配送先住所" %>
+              　<%= f.text_field :send_address,  placeholder:"配送先住所", class: "form-control" %>
+          </div>
+
+
+          <div class="form-label-group">
+              <%= f.label :payment_id, "支払方法" %>
+              <%= f.collection_select :payment_id, Payment.all, :id, :payway, class: "form-control" %>
+          </div>
+          <br>
+          <div class="form-label-group">
+              <%= f.label :delivery_id,"受取方法" %>
+              <%= f.collection_select :delivery_id, Delivery.all, :id, :sipping, class: "form-control" %>
+          </div>
+
+          <br>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+
+          <%= f.submit '購入確認', class: 'btn my-2 my-sm-0 btn__color' %>
+
+          <% end %>
+
+
+      </div>
+  </div>
+
+

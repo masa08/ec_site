@@ -2,6 +2,7 @@ class CartsController < ApplicationController
   def show
     @cart = Cart.find(params[:id])
     @item_carts = ItemCart.where(cart_id: @cart)
+
   end
 
   def add_item

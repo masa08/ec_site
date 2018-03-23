@@ -17,7 +17,11 @@ post '/genres' => 'application#genre'
 post '/types' => 'application#type'
 
 resources :users, only: [:edit, :update, :show] do
-  resources :histories, only: [:show]
+  resources :histories, only: [:show, :new, :create] do
+    collection do
+      get 'comfirmation'
+    end
+  end
 end
   resources :goodbyes, only: [:new, :create] do
     collection do
