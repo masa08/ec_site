@@ -23,7 +23,7 @@
                 <% end %>
             </div>
             <div class="purchase">
-            <%= link_to '購入する', purchases_complete_path(cart_id: @cart.id),class: 'btn my-2 my-sm-0 btn__color', method: :post %>
+            <%= link_to '購入情報の登録',  new_user_history_path(current_user),class: 'btn my-2 my-sm-0 btn__color'%>
             <br>
             <%= link_to '買い物を続ける', items_path, class: 'btn my-2 my-sm-0 btn__color' %>
             </div>
