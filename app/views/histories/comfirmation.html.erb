@@ -98,7 +98,7 @@
                     <% end -%>
                <!-- newかcreateか場合分け -->
 
-                        <%= form_for [@history][@cart], url: {action: 'create'} do |f| %>
+                        <%= form_for @history, url: {action: 'create'} do |f| %>
                         <%= f.hidden_field :send_name_kanji %>
                         <%= f.hidden_field :send_name_kana %>
                         <%= f.hidden_field :send_postal_code %>
@@ -106,7 +106,7 @@
                         <%= f.hidden_field :payment_id %>
                         <%= f.hidden_field :delivery_id %>
                         <%= f.hidden_field :user_id, :value => current_user.id %>
-                        <%= f.hidden_field :cart_id => @cart.id %>
+                        
 
                     <%= f.submit '購入確定', class: 'btn my-2 my-sm-0 btn__color' %>
         </div>
