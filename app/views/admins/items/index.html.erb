@@ -31,7 +31,7 @@
                             
                             <p>形式：</p>
                             <p>在庫数：<%=item.stock%></p>
-                            <p>金額：¥1,000</p>
+                            <p>金額：<%= number_to_currency(item.price) %></p>
                             <p style="margin-bottom:0px">
                                 <%= link_to "詳細", admins_item_path(item.id), :class => "btn btn-primary" %>
                                 <%= link_to "編集", edit_admins_item_path(item.id), :class => "btn btn-primary" %>
@@ -41,19 +41,8 @@
                     </div>
                 </div>
                 <% end -%>
-                
-
-
-
-
             </div>
-
-
-
-
                 <p class="text-muted text-center">&copy; 2017-2018</p>
-        </div>
-
 </section>
 </div>
 </div>
