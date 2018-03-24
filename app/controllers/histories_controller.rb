@@ -1,6 +1,7 @@
 class HistoriesController < ApplicationController
 
   def show
+  	@history = History.find(params[:id])
   end
 
   def new
@@ -21,21 +22,27 @@ class HistoriesController < ApplicationController
     @cart = Cart.find_by(user_id: current_user)
     # get items in cart
     @cart_items = @cart.item_carts
+
+    if @history.save
+
     @cart_items.each do |cart_item|
       @count = cart_item.item_count
       @item = Item.find_by(id: cart_item.item_id)
+
+      	  @purchase = Purchase.new(item_id: cart_item.item_id, history_id: @history.id)
+          @purchase.save
+
       @item_count = @item.stock
       @item_count -= @count
       @item.update(stock: @item_count)
       cart_item.destroy
-		if @history.save
-			redirect_to complete_view_path
+		
+	end
+		redirect_to complete_view_path	
 		else
 			@user = current_user
 			render :action => "new", id: @user.id 
 		end
-	end
-  	
   end
 
 	private

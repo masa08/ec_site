@@ -1,0 +1,52 @@
+              <%= render 'users/side_bar' %>
+
+              <div class="col-lg-9 col-md-9">
+
+                <div class="container-right">
+                  <h1 class="container-right__title text-center">個人情報</h1>
+
+                  <div class="container-right__user-info__history">
+                    <h2 class="container-right__user-info__history__title text-center">購入履歴</h2>
+                    <h3 class="container-right__user-info__history__date">2018/02/22</h3>
+                    <h4 class="container-right__user-info__history__title">ruby</h4>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% @history.items.each do |item| %>
+                        <tr>
+                          <th>名前</th>
+                          <td><%= item.item_name %></td>
+                        </tr>
+                        <tr>
+                          <th>アーティスト名</th>
+                          <td><%= item.artist_name %></td>
+                        </tr>
+                        <tr>
+                          <th>値段</th>
+                          <td><%= number_to_currency(item.price) %></td>
+                        </tr>
+                        <tr>
+                          <th>個数</th>
+<!--                           <td> <%=  %>個</td>
+ -->                        </tr>
+                        <tr>
+                          <th>制作会社</th>
+                          <td><%= item.label %></td>
+                        </tr>
+                        <tr>
+                          <th>リリース日</th>
+                          <td><%= item.release_date_idstrftime('%Y/%m/%d') %></td>
+                        </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+
+                  </div>
+
+                </div>
+              </div>
