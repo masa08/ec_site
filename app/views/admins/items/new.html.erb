@@ -13,8 +13,8 @@
 
 				<%= form_for([:admins, @item]) do |f| %>
                     商品画像<%= f.attachment_field :jacket_image %>
-                    
-                    <%= fields_for(@genre) do |i| %>
+
+                    <%= f.fields_for :item_genres do |i| %>
                     ジャンル <div> <%= i.collection_select :genre_id, Genre.all, :id, :genre_name, :class => 'form-control' %></div>
                     <% end %>
 

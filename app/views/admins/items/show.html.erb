@@ -36,7 +36,9 @@
                         </tr>
                         <tr>
                             <th>ジャンル</th>
-                            <td></td>
+                            <% @item.item_genres.each do |f| %>
+                            <td><%= f.genre.genre_name %></td>
+                            <% end -%>
                         </tr>
                         <tr>
                             <th>発売日</th>

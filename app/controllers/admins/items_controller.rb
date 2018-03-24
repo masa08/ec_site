@@ -12,6 +12,7 @@ class Admins::ItemsController < ApplicationController
   end
   def new
     @item = Item.new
+    @item.item_genres.build
   end
   def create
     item = Item.new(item_params)
@@ -33,8 +34,15 @@ class Admins::ItemsController < ApplicationController
   end
   private
   def item_params
-    params.require(:item).permit(:item_name, :stock, :artist_name,
-      :jacket_image, :price, :label, :release_date_id, item_genres_attributes: [:genre_id])
+    params.require(:item).permit(:item_name, 
+                                 :stock, 
+                                 :artist_name,
+                                 :jacket_image, 
+                                 :price, 
+                                 :label, 
+                                 :release_date_id, 
+                                 item_genres_attributes: [:id,:item_id,:genre_id]
+                                 )
   end
 
 end
