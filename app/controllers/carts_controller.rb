@@ -10,6 +10,8 @@ class CartsController < ApplicationController
     @item_id = params[:item_id]
     # get_item
     @item = Item.find_by(id: @item_id)
+    # get user
+    @user = User.find(current_user.id)
     # Create Cart or Find Cart
     if Cart.where(user_id: current_user.id).presence
       @cart = Cart.find_by(user_id: current_user.id)
@@ -22,6 +24,10 @@ class CartsController < ApplicationController
     @cart_id = @cart.id
     # get all ids to save item_cart
 
+    # save user.cart_id
+    @user.cart_id = @cart_id
+    @user.save
+  
     # Create ItemCart or Update item_cart
     if ItemCart.where(cart_id: @cart_id, item_id: @item_id).presence
       @item_cart = ItemCart.find_by(cart_id: @cart_id, item_id: @item_id)
