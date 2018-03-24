@@ -36,7 +36,7 @@
                                 <%= link_to "詳細", admins_user_path(user.id), :class => "btn btn-primary btn-xs"   %>
                                 
                                 <%= link_to "編集", edit_admins_user_path(user.id), :class => "btn btn-primary btn-xs" %>
-                                <%= link_to "削除", admins_user_path(@user), method: :delete, :class => "btn btn-primary btn-xs" %>
+                                <%= link_to "削除", admins_users_path, method: :delete, :class => "btn btn-primary btn-xs" %>
                             </td>
                         </tr>
                         <% end %>
