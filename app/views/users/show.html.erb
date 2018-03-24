@@ -43,7 +43,7 @@
                                 </tbody>
                             </table>
                             <div class="container-right__user-info__btn">
-                              <%= link_to "カートの中を見る", cart_path(current_user), class: "btn my-2 my-sm-0 btn__color" %>
+                              <%= link_to "カートの中を見る", cart_path(current_user.cart_id), class: "btn my-2 my-sm-0 btn__color" %>
                               <%= link_to "個人情報を編集する", edit_user_path(current_user), class: "btn my-2 my-sm-0 btn__color" %>
                             </div>
                           </div>
@@ -82,4 +82,3 @@
             </div>
         </div>
     </div>
-    
