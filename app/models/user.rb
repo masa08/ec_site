@@ -14,7 +14,7 @@ class User < ApplicationRecord
   #   def self.find_for_authentication(warden_conditions)
   #   without_soft_destroyed.where(email: warden_conditions[:email]).first
   # end
-  
+
   # Deviseを使うと、問答無用でemailがユニーク扱いになる。
   # それだと論理削除した際に再登録できないので、一旦emailに関する検証を削除する
   # https://gist.github.com/brenes/4503386
@@ -24,7 +24,7 @@ class User < ApplicationRecord
       callback.raw_filter.attributes.delete :email
     end
   end
-  
+
   # emailのバリデーションを定義し直す
   validates :email, presence: true
   validates_format_of :email, with: Devise.email_regexp, if: :email_changed?
@@ -32,8 +32,8 @@ class User < ApplicationRecord
 
 
 
-  has_many :carts
-  has_many :histories
+  has_many :carts, :dependent => :destroy
+  has_many :histories, :dependent => :destroy
   has_one :goodbye
   validates :postal_code, presence: true, length: {maximum: 7, minimum: 7}, :numericality => :only_integer
   validates :phone_number, presence: true, length: {minimum: 11}, :numericality => :only_integer
