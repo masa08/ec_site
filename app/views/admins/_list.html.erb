@@ -7,34 +7,38 @@
         <ul class="nav nav-pills nav-stacked">
             
 
-                
-                <li>
+            <% if admin_signed_in? %>
+            <li>
                 <%= link_to admins_histories_path do %>
-                <i class="glyphicon glyphicon-pencil"></i> 購入履歴一覧</a>
+                    <i class="glyphicon glyphicon-pencil"></i> 購入履歴一覧</a>
                 <% end %>
-                </li>
+            </li>
 
 
             <li>
-            <%= link_to admins_users_path do %>
-            <i class="glyphicon glyphicon-download"></i> ユーザー一覧</a>
-            <% end -%>
+                <%= link_to admins_users_path do %>
+                    <i class="glyphicon glyphicon-download"></i> ユーザー一覧</a>
+                <% end -%>
             </li>
 
 
 
             <li>
                 <%= link_to admins_items_path do %>
-                <i class="glyphicon glyphicon-leaf"></i> 在庫一覧</a>
+                    <i class="glyphicon glyphicon-leaf"></i> 在庫一覧</a>
                 <% end -%>
             </li>
 
 
             <li>
                 <%= link_to new_admins_item_path do %>
-                <i class="glyphicon glyphicon-folder-open"></i> 新規在庫追加</a>
+                    <i class="glyphicon glyphicon-folder-open"></i> 新規在庫追加</a>
                 <% end -%>
             </li>
+            <li>
+                <%=link_to "管理者 ログアウト", destroy_admin_session_path, method: :delete %>
+            </li>
+            <% end -%>
 
 
         </ul>
