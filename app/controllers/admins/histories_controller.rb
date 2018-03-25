@@ -1,4 +1,6 @@
 class Admins::HistoriesController < ApplicationController
+	  before_action :authenticate_admin!
+
 	def index
 		@histories = History.all
 	end
@@ -6,7 +8,7 @@ class Admins::HistoriesController < ApplicationController
 		@history = History.find(params[:id])
 	end
 	def edit
-		
+		@history = History.find(params[:id])
 	end
 	def update
 		
