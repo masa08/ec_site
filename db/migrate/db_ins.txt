@@ -22,3 +22,8 @@ insert into payments values(1, "クレジットカード", "00-00-00 00:00:00", 
 insert into payments values(2, "代金引換", "00-00-00 00:00:00", "00-00-00 00:00:00");
 insert into payments values(3, "コンビニ支払い", "00-00-00 00:00:00", "00-00-00 00:00:00");
 insert into payments values(4, "銀行振込_", "00-00-00 00:00:00", "00-00-00 00:00:00");
+
+insert into statuses values(1, "未払い", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into statuses values(2, "未発送", "00-00-00 00:00:00", "00-00-00 00:00:00");
+insert into statuses values(3, "発送済", "00-00-00 00:00:00", "00-00-00 00:00:00");
+

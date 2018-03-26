@@ -106,6 +106,7 @@
                         <%= f.hidden_field :payment_id %>
                         <%= f.hidden_field :delivery_id %>
                         <%= f.hidden_field :user_id, :value => current_user.id %>
+                        <%= f.hidden_field :status_id, :value => 1 %>
                         
 
                     <%= f.submit '購入確定', class: 'btn my-2 my-sm-0 btn__color' %>

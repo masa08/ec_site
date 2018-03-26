@@ -29,7 +29,7 @@ class HistoriesController < ApplicationController
       @count = cart_item.item_count
       @item = Item.find_by(id: cart_item.item_id)
 
-      	  @purchase = Purchase.new(item_id: cart_item.item_id, history_id: @history.id)
+      	  @purchase = Purchase.new(item_id: cart_item.item_id, history_id: @history.id, item_count: cart_item.item_count)
           @purchase.save
 
       @item_count = @item.stock
@@ -47,7 +47,7 @@ class HistoriesController < ApplicationController
 
 	private
 	def history_params
-		params.require(:history).permit(:user_id, :payment_id, :delivery_id, :send_address, :send_postal_code, :send_name_kanji, :send_name_kana)
+		params.require(:history).permit(:user_id, :payment_id, :delivery_id, :send_address, :send_postal_code, :send_name_kanji, :send_name_kana, :status_id)
 	end
 
 end

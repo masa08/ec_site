@@ -6,4 +6,6 @@ class Item < ApplicationRecord
   belongs_to :type, optional: true
   accepts_nested_attributes_for :item_genres
   attachment :jacket_image
+  has_many :histories, through: :purchases
+  accepts_nested_attributes_for :purchases
 end

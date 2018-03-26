@@ -7,8 +7,7 @@
 
                   <div class="container-right__user-info__history">
                     <h2 class="container-right__user-info__history__title text-center">購入履歴</h2>
-                    <h3 class="container-right__user-info__history__date">2018/02/22</h3>
-                    <h4 class="container-right__user-info__history__title">ruby</h4>
+                    <h3 class="container-right__user-info__history__date"><%= @history.created_at.strftime('%Y/%m/%d') %></h3>
                     <table class="table">
                       <thead>
                         <tr>
@@ -17,30 +16,30 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <% @history.items.each do |item| %>
+                        <% @history.purchases.each do |purchase| %>
                         <tr>
                           <th>名前</th>
-                          <td><%= item.item_name %></td>
+                          <td><%= link_to purchase.item.item_name, item_path(purchase.item) %></td>
                         </tr>
                         <tr>
                           <th>アーティスト名</th>
-                          <td><%= item.artist_name %></td>
+                          <td><%= purchase.item.artist_name %></td>
                         </tr>
                         <tr>
                           <th>値段</th>
-                          <td><%= number_to_currency(item.price) %></td>
+                          <td><%= number_to_currency(purchase.item.price) %></td>
                         </tr>
                         <tr>
                           <th>個数</th>
-<!--                           <td> <%=  %>個</td>
- -->                        </tr>
+                          <td> <%= purchase.item_count %>個</td>
+                        </tr>
                         <tr>
                           <th>制作会社</th>
-                          <td><%= item.label %></td>
+                          <td><%= purchase.item.label %></td>
                         </tr>
                         <tr>
                           <th>リリース日</th>
-                          <td><%= item.release_date_idstrftime('%Y/%m/%d') %></td>
+                          <td><%= purchase.item.release_date_id %></td>
                         </tr>
                         <% end %>
                       </tbody>
