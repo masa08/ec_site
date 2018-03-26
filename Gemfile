@@ -99,3 +99,9 @@ gem 'kakurenbo-puti'
 
 # エラー文日本語化
 gem 'rails-i18n'
+
+# デモ用ユーザーデータ生成
+gem 'gimei'
+
+
+

@@ -14,6 +14,9 @@ class HistoriesController < ApplicationController
   	@user = current_user
   	@history = History.new(history_params)
   	@cart = Cart.find_by(user_id: current_user)
+  	@item_carts = ItemCart.where(cart_id: @cart)
+
+
   end
 
   def create
