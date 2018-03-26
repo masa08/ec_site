@@ -5,5 +5,6 @@ class Item < ApplicationRecord
   has_many :purchases, :dependent => :destroy
   belongs_to :type, optional: true
   accepts_nested_attributes_for :item_genres
+  accepts_nested_attributes_for :tunes, allow_destroy: true
   attachment :jacket_image
 end
