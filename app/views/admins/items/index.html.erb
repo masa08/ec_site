@@ -29,7 +29,7 @@
                             <p><b class="text-info"><%=item.item_name%></b></p>
                             <p>アーティスト名：<%=item.artist_name%></p>
                             
-                            <p>形式：</p>
+                            <p>形式：<%= item.type.category_name %></p>
                             <p>在庫数：<%=item.stock%></p>
                             <p>金額：<%= number_to_currency(item.price) %></p>
                             <p style="margin-bottom:0px">

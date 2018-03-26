@@ -24,7 +24,9 @@
                     
                     価格<%= f.number_field :price, :class => 'form-control', :placeholder => '商品の価格を入力してください' %>
                     ラベル<%= f.text_field :label, :class => 'form-control', :placeholder => 'レコード会社を入力してください' %>
-                    CD or レコード<%= f.text_field :types_id, :class => 'form-control', :placeholder => '' %>
+                    
+                    タイプ <div> <%= f.collection_select :type_id, Type.all, :id, :category_name, :class => 'form-control' %></div>
+                    
                     リリース日<%= f.text_field :release_date_id, :class => 'form-control', :placeholder => 'リリースされた年月日を入力してください' %>
 
                     数<%= f.number_field :stock %>

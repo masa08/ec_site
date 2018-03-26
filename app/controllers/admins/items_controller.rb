@@ -1,4 +1,5 @@
 class Admins::ItemsController < ApplicationController
+    before_action :authenticate_admin!
 
 
 	def index
@@ -41,6 +42,7 @@ class Admins::ItemsController < ApplicationController
                                  :price, 
                                  :label, 
                                  :release_date_id, 
+                                 :type_id,
                                  item_genres_attributes: [:id,:item_id,:genre_id]
                                  )
   end

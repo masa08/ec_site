@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180326033959) do
 
+
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -100,7 +101,7 @@ ActiveRecord::Schema.define(version: 20180326033959) do
     t.integer "release_date_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "types_id"
+    t.string "type_id"
   end
 
   create_table "payments", force: :cascade do |t|
