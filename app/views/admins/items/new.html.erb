@@ -8,10 +8,10 @@
 <!-- main -->
         <div class="col-md-9">
             <div class="page-header">
-                        <h1><small>新規在庫追加</small></h1>
-                    </div>
+                <h1><small>新規在庫追加</small></h1>
+            </div>
 
-				<%= form_for([:admins, @item]) do |f| %>
+				<%= form_for([:admins, @item], html:{class: 'form-horizontal'}) do |f| %>
                     商品画像<%= f.attachment_field :jacket_image %>
 
                     <%= f.fields_for :item_genres do |i| %>
@@ -27,15 +27,27 @@
                     
                     タイプ <div> <%= f.collection_select :type_id, Type.all, :id, :category_name, :class => 'form-control' %></div>
                     
-                    リリース日<%= f.text_field :release_date_id, :class => 'form-control', :placeholder => 'リリースされた年月日を入力してください' %>
+                    リリース日(xxxx-xx-xxと入力してください)<%= f.text_field :release_date_id, :class => 'form-control', :placeholder => 'リリースされた年月日を入力してください' %>
+                    曲<%= f.add_nested_fields_link :tunes, '曲追加', class: 'btn btn-primary', role: 'button' %>
+                    <table class="table table-striped table-bordered table-hover">
+                        <tbody>
+                                <tr>
+                                    <th>曲名</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                <%= f.nested_fields_for :tunes, wrapper_tag: :tr do |q| %>
+                                    <td><%= q.text_field :tune_title, :class => 'form-control' %></td>
+                                    <td><%= q.remove_nested_fields_link 'Delete', class: 'btn btn-danger ', role: 'button' %></td>
+                                <% end %>
+                            </tr>
+                        </tbody>
+                    </table>
+                     <br>
 
-                    数<%= f.number_field :stock %>
-                
+                    数<%= f.number_field :stock %> <br>
                 <%= f.submit "追加", :class => 'btn btn-primary' %>
             <% end -%>
-
-
-
         </div>
 
 

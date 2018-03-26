@@ -14,6 +14,7 @@ class Admins::ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_genres.build
+    @item.tunes.build
   end
   def create
     item = Item.new(item_params)
@@ -43,7 +44,8 @@ class Admins::ItemsController < ApplicationController
                                  :label, 
                                  :release_date_id, 
                                  :type_id,
-                                 item_genres_attributes: [:id,:item_id,:genre_id]
+                                 item_genres_attributes: [:id,:item_id,:genre_id],
+                                 tunes_attributes: [:id, :item_id, :tune_title, :_destroy]
                                  )
   end
 

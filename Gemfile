@@ -89,6 +89,7 @@ gem 'bootstrap-sass'
 
 # 複数フォーム 作成gem
 gem 'nested_form_fields'
+gem 'jquery-rails'
 
 #テストデータ投入
 gem 'seed-fu'

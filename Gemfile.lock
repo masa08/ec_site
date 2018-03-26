@@ -319,6 +319,7 @@ DEPENDENCIES
   hirb
   hirb-unicode
   jbuilder (~> 2.5)
+  jquery-rails
   kakurenbo-puti
   kaminari
   listen (>= 3.0.5, < 3.2)

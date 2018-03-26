@@ -6,8 +6,8 @@
                 <!-- main -->
                 <div class="page-header">
                     <h1><small>購入履歴詳細</small>
-                        <%= link_to "編集", edit_admins_history_path(history.id), :class => "btn btn-primary btn-xs" %>
-                        <%= link_to "削除", admins_history_path(history), method: :delete, :class => "btn btn-primary btn-xs" %>
+                        <%= link_to "編集", edit_admins_history_path(@history.id), :class => "btn btn-primary btn-xs" %>
+                        <%= link_to "削除", admins_history_path(@history), method: :delete, :class => "btn btn-primary btn-xs" %>
                     </h1>
                 </div>
                 <div class="col-md-9">
@@ -39,11 +39,11 @@
                         </tr>
                         <tr>
                             <th>支払い方法</th>
-                            <td></td>
+                            <td><%= @history.payment.payway %></td>
                         </tr>
                         <tr>
                             <th>配送方法</th>
-                            <td></td>
+                            <td><%= @history.delivery.sipping %></td>
                         </tr>
                         <tr>
                             <th>合計金額</th>

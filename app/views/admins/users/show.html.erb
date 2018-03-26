@@ -34,14 +34,17 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <% @user.histories.each do |f| %>
                     <tr>
-                        <td>01</td><td>2018-02-28</td><td>未出荷</td>
+                        <td> <%= f.id %> </td><td> <%= f.created_at %> </td><td> <%= f.status %> </td>
                         <td>
-                            <a href="" class="btn btn-primary btn-xs">詳細</a>
-                            <a href="" class="btn btn-primary btn-xs">編集</a>
-                            <a href="" class="btn btn-primary btn-xs">削除</a>
+                            <%= link_to "詳細", admins_history_path(f.id), :class => "btn btn-primary btn-xs" %>
+                            
+                            <%= link_to "編集", edit_admins_history_path(f.id), :class => "btn btn-primary btn-xs" %>
+                            <%= link_to "削除", admins_history_path(f), method: :delete, :class => "btn btn-primary btn-xs" %>
                         </td>
                     </tr>
+                    <% end -%>
                      <tr>
                         <td>02</td><td>2018-02-28</td><td>未入金</td>
                         <td>
