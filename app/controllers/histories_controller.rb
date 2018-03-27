@@ -15,12 +15,8 @@ class HistoriesController < ApplicationController
   	@cart = Cart.find_by(user_id: current_user)
   	@item_carts = ItemCart.where(cart_id: @cart)
 
-  	sum = 0
-  	@item_carts.each do |item_cart|
-  		sub_total = item_cart.item.price.to_i * item_cart.item_count.to_i
-  		sum+=sub_total
-  	end
-  	@history.total_price = sum
+
+  	@history.total_price = @item_carts.total
 
 
   end

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
   	@user = current_user
-    @histories = @user.histories
+    @histories = @user.histories.order(created_at: :desc)
   end
 
   def edit
