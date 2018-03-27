@@ -68,7 +68,7 @@
                               <tr>
                                   <th><%= history.id %></th>
                                   <td><%= history.created_at.strftime('%Y/%m/%d') %></td>
-                                  <td><%= history.status%></td>
+                                  <td><%= history.status.status_name %></td>
                                   <td><%= link_to "詳細",   user_history_path(user_id: history.user_id, id: history.id), class: "btn my-2 my-sm-0 btn__color" %></td>
                               </tr>
                               <% end %>
