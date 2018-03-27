@@ -23,6 +23,8 @@ class Admins::ItemsController < ApplicationController
   end
   def edit
     @item = Item.find(params[:id])
+    @item.item_genres.build
+    @item.tunes.build
   end
   def update
     item = Item.find(params[:id])

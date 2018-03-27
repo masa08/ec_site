@@ -12,58 +12,16 @@
 
                     <h1><small>購入情報</small></h1>
 
-
-            <form method="post" action"">
-
-                <div class="form-group">
-                    <label>ステータス</label>
-                    <select name="area" class="form-control col-md-4">
-                        <option value="未入金">未入金</option>
-                        <option value="未発送">未発送</option>
-                        <option value="発送済">発送済</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>購入者名</label>
-                    <input type="text" name="email" class="form-control" placeholder="購入者名を入力して下さい">
-                </div>
-                <div class="form-group">
-                    <label>受取主</label>
-                    <input type="text" name="name" class="form-control" placeholder="受取主を入力して下さい">
-                </div>
-
-                <div class="form-group">
-                    <label>郵便番号</label>
-                    <input type="text" name="email" class="form-control" placeholder="郵便番号を入力して下さい">
-                </div>
-
-                <div class="form-group">
-                    <label>配送先住所</label>
-                    <input type="text" name="email" class="form-control" placeholder="配送先住所を入力して下さい">
-                </div>
-                <div class="form-group">
-                    <label>支払い方法</label>
-                    <select name="area" class="form-control col-md-4">
-                        <option value="カード">カード</option>
-                        <option value="コンビニATM">コンビニATM</option>
-                        <option value="銀行振込">銀行振込</option>
-                        <option value="着払い">着払い</option>
-                    </select>
-
-                </div>
-                <div class="form-group">
-                    <label>配送方法</label>
-                    <select name="area" class="form-control col-md-4">
-                        <option value="通常便">通常便</option>
-                        <option value="お急ぎ便">お急ぎ便</option>
-                        <option value="日付指定">日付指定</option>
-                    </select>
-                </div>
-
-
-                <button type="submit" class="btn btn-primary">変更</button>
-
-            </form>
+            <%= form_for ([:admins, @history]) do |f| %>
+                ステータス<%= f.collection_select :status_id, Status.all, :id, :status_name, :class => 'form-control' %>
+                受け取り主<%= f.text_field :send_name_kanji, :class => 'form-control' %>
+                受け取り主(カナ) <%= f.text_field :send_name_kana, :class => 'form-control' %>
+                郵便番号 <%= f.text_field :send_postal_code, :class => 'form-control' %>
+                配送先住所 <%= f.text_field :send_address, :class => 'form-control' %>
+                支払い方法 <%= f.collection_select :payment_id, Payment.all, :id, :payway, :class => 'form-control' %>
+                配送方法 <%= f.collection_select :delivery_id, Delivery.all, :id, :sipping, :class => 'form-control' %>
+                <%= f.submit "変更", :class => 'btn btn-primary' %>
+            <% end -%>
 
             <div class="history-item">
                     <h1><small>購入商品情報</small></h1>
