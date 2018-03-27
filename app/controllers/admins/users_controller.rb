@@ -6,7 +6,7 @@ class Admins::UsersController < ApplicationController
 	end
 	def show
 		@user = User.find(params[:id])
-		@histories = current_user.histories
+		@histories = @user.histories
 	end
 	def edit
 		@user = User.find(params[:id])

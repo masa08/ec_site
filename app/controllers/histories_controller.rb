@@ -15,7 +15,9 @@ class HistoriesController < ApplicationController
   	@cart = Cart.find_by(user_id: current_user)
   	@item_carts = ItemCart.where(cart_id: @cart)
 
+
   	@history.total_price = @item_carts.total
+
 
   end
 
@@ -43,6 +45,7 @@ class HistoriesController < ApplicationController
 	end
 		redirect_to complete_view_path	
 		else
+			binding.pry
 			@user = current_user
 			render :action => "new", id: @user.id 
 		end
