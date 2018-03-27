@@ -7,7 +7,6 @@ class HistoriesController < ApplicationController
   def new
   	@user = current_user
   	@history = History.new
-
   end
 
   def comfirmation
@@ -16,6 +15,7 @@ class HistoriesController < ApplicationController
   	@cart = Cart.find_by(user_id: current_user)
   	@item_carts = ItemCart.where(cart_id: @cart)
 
+  	@history.total_price = @item_carts.total
 
   end
 
@@ -50,7 +50,7 @@ class HistoriesController < ApplicationController
 
 	private
 	def history_params
-		params.require(:history).permit(:user_id, :payment_id, :delivery_id, :send_address, :send_postal_code, :send_name_kanji, :send_name_kana, :status_id)
+		params.require(:history).permit(:user_id, :payment_id, :delivery_id, :send_address, :send_postal_code, :send_name_kanji, :send_name_kana, :status_id, :total_price)
 	end
 
 end

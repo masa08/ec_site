@@ -9,4 +9,5 @@ class Item < ApplicationRecord
   attachment :jacket_image
   has_many :histories, through: :purchases
   accepts_nested_attributes_for :purchases
+
 end
