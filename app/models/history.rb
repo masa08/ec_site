@@ -5,4 +5,5 @@ class History < ApplicationRecord
 	belongs_to :status
 	has_many :items, through: :purchases
 	has_many :purchases
+	
 end
