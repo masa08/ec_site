@@ -22,7 +22,7 @@
                     <p>ジャンル：<% item_cart.item.genres.each do |genre|  %>
                                <%= genre.genre_name %>
                                <% end %></p>
-                    <%= link_to 'カートから1つ削除', delete_item_path(id: item_cart.id), method: :post %>
+                    <%= link_to 'カートから1つ削除', delete_item_path(id: item_cart.id), method: :post, style: "color:red;" %>
                 </div>
                 <% end %>
             </div>
