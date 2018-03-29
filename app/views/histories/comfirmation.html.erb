@@ -2,7 +2,7 @@
 
         <%= render 'users/side_bar' %>
 
-        <div class="col-lg-9 col-md-9">
+        <div class="col-lg-9 col-md-9" style="margin-top:70px;">
 
     <div class="main">
         <div class="config-box">
@@ -32,10 +32,10 @@
                          <li><span class="info"> 受取方法 </span>
                         <%= f.hidden_field :delivery_id %>
                          <span><%= @history.delivery.sipping %></span></li>
-                    </ul> 
-                    
+                    </ul>
+
                             </div>
-       
+
 
 
 
@@ -62,13 +62,13 @@
 
                                 <% @item_carts.each do |item_cart| %>
                                 <tr>
-                                    
+
                                     <td>
                                         <%= attachment_image_tag item_cart.item, :jacket_image, :fill, 150, 150, class: "img-thumbnail" %>
                                     </td>
                                     <td>
                                         <%= item_cart.item.item_name %>
-                                        
+
                                     </td>
                                     <td><p class="artist-name"><%= item_cart.item.artist_name %></p></td>
                                     <td>
@@ -77,13 +77,13 @@
                                     <td>￥<%= item_cart.item.price %></td>
                                 </tr>
                                 <% end -%>
-       
+
                             </tbody>
                         </table>
                         <p class="total-price"> 合計: ¥<%= @history.total_price %></p>
                     </div>
         </div>
-       
+
     </div>
  <%= f.submit '戻る', class: 'btn my-2 my-sm-0 btn__color col-md-3 text-center' %>
                     <% end -%>
@@ -98,7 +98,7 @@
                         <%= f.hidden_field :user_id, :value => current_user.id %>
                         <%= f.hidden_field :status_id, :value => 1 %>
                         <%= f.hidden_field :total_price, :value => @history.total_price %>
-                        
+
 
                     <%= f.submit '購入確定', class: 'btn my-2 my-sm-0 btn__color col-md-3' %>
         </div>

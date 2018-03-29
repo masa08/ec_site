@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
     elsif params[:type_id].present?
       @items = Item.where(type_id: params[:type_id])
     else
-      @items = Item.all 
+      @items = Item.all
    end
 end
 

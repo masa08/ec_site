@@ -17,18 +17,16 @@
                             </tr>
                         </thead>
                         <tbody>
+                          <% number = 1 %>
+                          <% @item.tunes.each do |tune| %>
                             <tr>
-                                <th>1</th>
-                                <td>Java</td>
+                                <td>
+                                    <%= number %>
+                                    <% number +=1 %>
+                                </td>
+                                <td><%= tune.tune_title %></td>
                             </tr>
-                            <tr>
-                                <th>2</th>
-                                <td>PHP</td>
-                            </tr>
-                            <tr>
-                                <th>3</th>
-                                <td>PHPs</td>
-                            </tr>
+                          <% end %>
                         </tbody>
                     </table>
                 </div>
@@ -66,6 +64,16 @@
                                 <tr>
                                     <th>リリース日</th>
                                     <td><%= @item.release_date_id %></td>
+                                </tr>
+                                <tr>
+                                    <th>タイプ</th>
+                                    <td><%= @item.type.category_name %></td>
+                                </tr>
+                                <tr>
+                                    <th>ジャンル</th>
+                                    <td><% @item.genres.each do |genre|  %>
+                                               <%= genre.genre_name %>
+                                               <% end %></td>
                                 </tr>
                             </tbody>
                         </table>

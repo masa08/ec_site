@@ -14,7 +14,7 @@
                   <%= link_to item_path(result.id) do %>
                   <div class="container-right__contents text-center col-lg-3 col-md-3">
                       <%= attachment_image_tag result, :jacket_image, :fill, 150, 150 %>
-                      <h3 class="container-right__contents__title"><%= result.item_name %></h3>
+                      <h3 class="container-right__contents__title">商品名：<%= result.item_name %></h3>
                       <p>値段:<%= result.price %>円</p>
                       <% if result.stock == 0 %>
                         <p style="color:red;">Sold Out</p>
@@ -22,7 +22,11 @@
                         <p>残り:<%= result.stock %></p>
                       <% end %>
                       <p>アーティスト名:<%= result.artist_name %></p>
-                      <p><%= result.label %></p>
+                      <p>制作会社<%= result.label %></p>
+                      <p>タイプ:<%= result.type.category_name %></p>
+                      <p>ジャンル:<% result.genres.each do |genre|  %>
+                                 <%= genre.genre_name %>
+                                 <% end %></p>
                       <% if current_user %>
                       <% if result.stock != 0 %>
                       <%= link_to 'カートに追加', add_item_path(item_id: result.id), method: :post, class: "btn my-2 my-sm-0 btn__color cart_btn" %>
@@ -37,7 +41,7 @@
                   <%= link_to item_path(item.id) do %>
                   <div class="container-right__contents text-center col-lg-3 col-md-3">
                       <%= attachment_image_tag item, :jacket_image, :fill, 150, 150 %>
-                      <h3 class="container-right__contents__title"><%= item.item_name %></h3>
+                      <h3 class="container-right__contents__title">商品名：<%= item.item_name %></h3>
                       <p>値段:<%= item.price %>円</p>
                       <% if item.stock == 0 %>
                         <p style="color:red;">Sold Out</p>
@@ -45,7 +49,12 @@
                         <p>残り:<%= item.stock %></p>
                       <% end %>
                       <p>アーティスト名:<%= item.artist_name %></p>
-                      <p><%= item.label %></p>
+                      <p>制作会社:<%= item.label %></p>
+                      <p>タイプ:<%= item.type.category_name %></p>
+                      <p>ジャンル:<% item.genres.each do |genre|  %>
+                                 <%= genre.genre_name %>
+                                 <% end %>
+                      </p>
                       <%= item.id  %>
                       <% if current_user %>
                         <% if item.stock != 0 %>
