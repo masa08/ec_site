@@ -2,8 +2,10 @@ class Admins::HistoriesController < ApplicationController
 	  before_action :authenticate_admin!
 
 	def index
-    	@searches = History.search(params[:q])
-    	@histories = @searches.result
+		@histories = History.all
+    	@searches = History.ransack(params[:q])
+    	@result = @searches.result
+
 	end
 	def show
 		@history = History.find(params[:id])

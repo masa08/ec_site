@@ -9,7 +9,7 @@ class Admins::ItemsController < ApplicationController
 	
   def show
     @item = Item.find(params[:id])
-
+    
   end
   def new
     @item = Item.new
@@ -35,6 +35,11 @@ class Admins::ItemsController < ApplicationController
     item = Item.find(params[:id])
     item.destroy
     redirect_to admins_items_path
+  end
+  def stock_create
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    redirect_to admins_item_path(@item.id)
   end
   private
   def item_params

@@ -50,62 +50,53 @@
                             <td><%= number_to_currency(@history.total_price) %></td>
                         </tr>
                     </table>
-
-                <div class="history-item">
                     <h1><small>購入商品情報</small></h1>
-                    <div class="col-md-2">
-                        <a href="">
-                            <img class ="item-image" src="fickle_friends.jpg">
-                        </a>
+                    <% @history.purchases.each do |f| %>
+                    <div class="history-item">
+                        <div class="col-md-2">
+                            <%= attachment_image_tag f.item, :jacket_image, :fill,270,270  %>
+                        </div>
+                        <div class="col-md-7 pull-right">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>商品名</th>
+                                    <td><%= f.item.item_name  %></td>
+                                </tr>
+                                <tr>
+                                    <th>アーティスト</th>
+                                    <td><%= f.item.artist_name %></td>
+                                </tr>
+                                <tr>
+                                    <th>形式</th>
+                                    <td><%= f.item.type.category_name %></td>
+                                </tr>
+                                <tr>
+                                    <th>ジャンル</th>
+                                    <td><% f.item.item_genres.each do |genre| %>
+                                        <%= genre.genre.genre_name %>
+                                        <% end -%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>レーベル</th>
+                                    <td><%= f.item.label %></td>
+                                </tr>
+                                <tr>
+                                    <th>価格</th>
+                                    <td><%= number_to_currency(f.item.price) %></td>
+                                </tr>
+                                <tr>
+                                    <th>数量</th>
+                                    <td><%= f.item_count %></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                    <div class="col-md-7 pull-right">
-                        <table class="table table-bordered">
-                            <tr><th>No</th><td>1</td></tr>
-                            <tr><th>商品名</th><td><a href="">Brooklyn</a></td></tr>
-                            <tr><th>アーティスト</th><td>Fickle Friends</td></tr>
-                            <tr><th>形式</th><td>CD</td></tr>
-                            <tr><th>ジャンル</th><td>ロック</td></tr>
-                            <tr><th>レーベル</th><td>aaaaa</td></tr>
-                            <tr><th>価格</th><td>¥1,000</td></tr>
-                            <tr><th>数量</th><td>5</td></tr>
-                        </table>
-                    </div>
+                    <% end -%>
                 </div>
-
-                <div class="history-item">
-                    <div class="col-md-2">
-                        <a href="">
-                            <img class ="item-image" src="seeb.jpeg">
-                        </a>
-                    </div>
-                    <div class="col-md-7 pull-right">
-                        <table class="table table-bordered">
-                            <tr><th>No</th><td>2</td></tr>
-                            <tr><th>商品名</th><td><a href="">Simple Life</a></td></tr>
-                            <tr><th>アーティスト</th><td>Seeb</td></tr>
-                            <tr><th>形式</th><td>CD</td></tr>
-                            <tr><th>ジャンル</th><td>ロック</td></tr>
-                            <tr><th>レーベル</th><td>aaaaa</td></tr>
-                            <tr><th>価格</th><td>¥1,000</td></tr>
-                            <tr><th>数量</th><td>5</td></tr>
-                        </table>
-                    </div>
-                </div>
-
-
-
-
-
-                </div>
-            </div>
-
-
-        </div>
-
-
-
-        <p class="text-muted text-center">&copy; 2017-2018</p>
-
     </section>
 </div>
 </div>
+<p class="text-muted text-center">&copy; 2017-2018</p>
+
+
