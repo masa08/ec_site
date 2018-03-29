@@ -21,7 +21,7 @@ class HistoriesController < ApplicationController
   		sub_total = item_cart.item.price.to_i * item_cart.item_count.to_i
   		sum+=sub_total
   	end
-  	@history.total_price = sum
+  	@history.total_price = sum	
 
 
   end
