@@ -19,17 +19,14 @@
                 <div class="col-md-5">
 
                     <table class="table table-hover">
-
                         <tr>
                             <th>商品名</th>
                             <td><%=@item.item_name%></td>
                         </tr>
-                        
                         <tr>
                             <th>アーティスト</th>
                             <td><%=@item.artist_name%></td>
                         </tr>
-                        
                         <tr>
                             <th>形式</th>
                             <td><%= @item.type.category_name %></td>
@@ -54,20 +51,20 @@
                         </tr>
                         <tr>
                             <th>在庫数</th>
-                            <td><%=@item.stock%></td>
+                            <td>
+                              <%= form_for [:admins, @item],:url => { :controller => :items, :action => :stock_create } do |f| %>
+                              <%= f.number_field :stock%>
+                              <%= f.submit "更新", class: "btn  btn-primary btn-xs" %>
+                              <% end -%>
+                            </td>
                         </tr>
-                              <tr>
-                                <th>在庫追加</th><td><input type="number" name="example" min="0" max="500" value="0"><a href="" class="btn btn-primary btn-xs">更新</a></td>
-                            </tr>
-                          </table>
-
+                    </table>
                               <div class="admin">
                                   <h1><small>曲名一覧</small></h1>
 
                                   <table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            
                                             <th>曲名</th>
                                         </tr>
                                     </thead>
