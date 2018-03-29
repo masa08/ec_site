@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
   def show
   	@user = current_user
+<<<<<<< Updated upstream
     @histories = @user.histories
     @items = Item.all
+=======
+    @histories = @user.histories.order(created_at: :desc)
+>>>>>>> Stashed changes
   end
 
   def edit

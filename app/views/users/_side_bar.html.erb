@@ -5,14 +5,18 @@
         </h3>
         <ul class="nav nav-pills nav-stacked">
             <% @genres.each do |genre| %>
+<<<<<<< Updated upstream
             <li><%= link_to genre.genre_name, genres_path(genre_name: genre.genre_name), method: :post %></li>
+=======
+            <li><%= link_to genre.genre_name, sidebar_index_items_path(genre_id: genre.id) %></li>
+>>>>>>> Stashed changes
             <% end %>
 
         </ul>
         <h3 class="panel-heading">タイプ</h3>
         <ul class="nav nav-pills nav-stacked">
             <% @types.each do |type| %>
-            <li><%= link_to type.category_name, items_path( params[:types_id]) %></li>
+            <li><%= link_to type.category_name, sidebar_index_items_path(type_id: type.id) %></li>
             <% end %>
         </ul>
 

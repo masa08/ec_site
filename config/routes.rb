@@ -32,7 +32,12 @@ end
 
 post '/admins/items' => 'admins/items#create'
 
-resources :items
+resources :items do
+  collection do
+    get 'sidebar_index'
+  end
+end
+
 
 namespace :admins do
   resources :items

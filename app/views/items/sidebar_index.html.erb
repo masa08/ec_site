@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+              <%= render 'users/side_bar' %>
+        <div class="col-lg-9 col-md-9">
+            <div class="container-right">
+                <h1 class="container-right__title text-center">商品一覧</h1>
+                <% @items.each do |item| %>
+                  <%= link_to item_path(item.id) do %>
+                  <div class="container-right__contents text-center col-lg-3 col-md-3">
+                      <%= attachment_image_tag item, :jacket_image, :fill, 150, 150 %>
+                      <h3 class="container-right__contents__title"><%= item.item_name %></h3>
+                      <p>値段:<%= item.price %>円</p>
+                      <% if item.stock == 0 %>
+                        <p style="color:red;">Sold Out</p>
+                      <% else %>
+                        <p>残り:<%= item.stock %></p>
+                      <% end %>
+                      <p>アーティスト名:<%= item.artist_name %></p>
+                      <p><%= item.label %></p>
+                      <% if current_user %>
+                        <% if item.stock != 0 %>
+                          <%= link_to 'カートに追加', add_item_path(item_id: item.id), method: :post, class: "btn my-2 my-sm-0 btn__color cart_btn" %>
+                        <% end %>
+                      <% end %>
+                  </div>
+
+                        <% end %>
+                      <% end %>
+
+                                  </div>
+        </div>
+    </div>
+</div>

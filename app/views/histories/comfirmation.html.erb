@@ -58,7 +58,12 @@
                                 </tr>
                             </thead>
                             <tbody>
+<<<<<<< Updated upstream
                                 <%= %>
+=======
+
+                                <% @item_carts.each do |item_cart| %>
+>>>>>>> Stashed changes
                                 <tr>
                                     <td>
                                         <img src="img/avicii_withoutyou.jpg" class="img-thumbnail" alt="noimage">
@@ -87,9 +92,17 @@
                                     </td>
                                     <td >¥1,500</td>
                                 </tr>
+<<<<<<< Updated upstream
                             </tbody>
                         </table>
                         <p class="total-price"> 合計: ¥4,500</p>
+=======
+                                <% end -%>
+       
+                            </tbody>
+                        </table>
+                        <p class="total-price"> 合計: ¥<%= @history.total_price %></p>
+>>>>>>> Stashed changes
                     </div>
         </div>
        
@@ -97,7 +110,6 @@
  <%= f.submit '戻る', class: 'btn my-2 my-sm-0 btn__color' %>
                     <% end -%>
                <!-- newかcreateか場合分け -->
-
                         <%= form_for @history, url: {action: 'create'} do |f| %>
                         <%= f.hidden_field :send_name_kanji %>
                         <%= f.hidden_field :send_name_kana %>
@@ -106,14 +118,16 @@
                         <%= f.hidden_field :payment_id %>
                         <%= f.hidden_field :delivery_id %>
                         <%= f.hidden_field :user_id, :value => current_user.id %>
+<<<<<<< Updated upstream
+=======
+                        <%= f.hidden_field :status_id, :value => 1 %>
+                        <%= f.hidden_field :total_price, :value => @history.total_price %>
+>>>>>>> Stashed changes
                         
 
                     <%= f.submit '購入確定', class: 'btn my-2 my-sm-0 btn__color' %>
         </div>
 
-
 <% end -%>
-
-
 </div>
 </div>

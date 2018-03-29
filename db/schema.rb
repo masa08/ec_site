@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< Updated upstream
 ActiveRecord::Schema.define(version: 20180322104914) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20180327040359) do
+=======
+
+ActiveRecord::Schema.define(version: 20180327132443) do
+>>>>>>> eddddc318db0f00d6638524cded396917b96a21e
+>>>>>>> Stashed changes
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -97,10 +106,14 @@ ActiveRecord::Schema.define(version: 20180322104914) do
     t.integer "price"
     t.string "label"
     t.integer "item_status_id"
-    t.integer "release_date_id"
+    t.date "release_date_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< Updated upstream
     t.string "types_id"
+=======
+    t.integer "type_id"
+>>>>>>> Stashed changes
   end
 
   create_table "payments", force: :cascade do |t|

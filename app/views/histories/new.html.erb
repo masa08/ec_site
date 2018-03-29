@@ -15,20 +15,20 @@
 
             <div class="form-label-group">
               <%= f.label :send_name_kanji,"受取主氏名(漢字)" %>
-              <%= f.text_field :send_name_kanji,  placeholder:"受取主氏名(漢字)", class: "form-control" %>
+              <%= f.text_field :send_name_kanji, value: @user.user_name_kanji, placeholder:"受取主氏名(漢字)", class: "form-control" %>
           </div>
           <div class="form-label-group">
               <%= f.label :send_name_kana,"受取主氏名(カタカナ)" %>
-              <%= f.text_field :send_name_kana,  placeholder:"受取主氏名(カタカナ)", class: "form-control" %>
+              <%= f.text_field :send_name_kana, value: @user.user_name_kana,  placeholder:"受取主氏名(カタカナ)", class: "form-control" %>
           </div>
           <div class="form-label-group">
               <%= f.label :send_postal_code,"郵便番号" %>
-              <%= f.text_field :send_postal_code,  placeholder:"郵便番号", class: "form-control" %>
+              <%= f.text_field :send_postal_code, value: @user.postal_code, placeholder:"郵便番号", class: "form-control" %>
           </div>
 
           <div class="form-label-group">
               <%= f.label :send_address,"配送先住所" %>
-              　<%= f.text_field :send_address,  placeholder:"配送先住所", class: "form-control" %>
+              　<%= f.text_field :send_address, value: @user.address, placeholder:"配送先住所", class: "form-control" %>
           </div>
 
 
