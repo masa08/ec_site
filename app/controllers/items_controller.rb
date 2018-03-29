@@ -8,18 +8,23 @@ class ItemsController < ApplicationController
   end
 
   def sidebar_index
-     # 小野瀬サイドバー検証中
+     @items = [] #初期値を配列で設定
      if params[:genre_id].present?
-      @item_genres = ItemGenre.where(genre_id: params[:genre_id])
-      binding.pry
-      @items = Item.where(item_genres)
+
+      item_genres = ItemGenre.where(genre_id: params[:genre_id])
+
+
+      item_genres.each do |item_genre|
+
+      item = Item.find(item_genre.item_id) #findメソッドはidを参照するため直接打ち込んでオッケー
+      @items << item #データの追加は演算子<<で
+    end
     elsif params[:type_id].present?
       @items = Item.where(type_id: params[:type_id])
     else
       @items = Item.all 
-    end
-    # binding.pry
-  end
+   end
+end
 
   def update
 
