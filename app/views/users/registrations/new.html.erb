@@ -8,34 +8,42 @@
       <br>
 
       <div class="form-label-group">
+        <p>名前(漢字)</p><br>
         <%= f.text_field :user_name_kanji, autofocus: true, autocomplete: "user_name_kanji", class: "form-control",placeholder: "名前(漢字)" %>
       </div>
       <br>
       <div class="form-label-group">
+        <p>名前(カタカナ)</p><br>
         <%= f.text_field :user_name_kana, autofocus: true, autocomplete: "user_name_kana", class: "form-control",placeholder: "名前(カタカナ)" %>
       </div>
       <br>
       <div class="form-label-group">
+        <p>郵便番号(7文字以上)</p><br>
         <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", class: "form-control",placeholder: "郵便番号" %>
       </div>
       <br>
       <div class="form-label-group">
+        <p>住所</p><br>
         <%= f.text_field :address, autofocus: true, autocomplete: "address", class: "form-control",placeholder: "住所" %>
       </div>
       <br>
       <div class="form-label-group">
+        <p>電話番号(11文字以上)</p><br>
         <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", class: "form-control",placeholder: "電話番号" %>
       </div>
       <br>
       <div class="form-label-group">
        <div class="field">
+        <p>メールアドレス</p><br>
          <%= f.text_field :email, autofocus: true, autocomplete: "email", class: "form-control",placeholder: "メールアドレス" %>
        </div>
        <br>
       <div class="field">
+        <p>パスワード</p><br>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
+
         <%= f.password_field :password, autocomplete: "off", class: "form-control",placeholder: "パスワード" %>
       </div>
       <br>
